@@ -3,35 +3,26 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-	<main class="p-4">
-		<h1><span class="text-2xl text-slate-800">Schaake Solutions</span></h1>
-		<p class="instructions">
-			To get started, open the <span class="text-xl text-red-500">directory</span> <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title="Schaake Solutions">
+  <div class="space-y-8">
+    <div class="space-y-4">
+      <h2 class="text-2xl font-bold drop-shadow">What we do</h2>
+	    <p>
+        Schaake Solutions provides state-of-the-art software-as-a-service (SaaS) platforms for finance companies.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      <h2 class="text-2xl font-bold drop-shadow">Our Solutions</h2>
+      <div class="flex flex-row gap-x-4 gap-y-4 flex-wrap">
+        <Card title="FLEX Equipment Finance" href="flex-equipment-finance">
+          A comprehensive SaaS platform that streamlines the entire equipment financing lifecycle, from loan origination to servicing. The platform combines powerful integrations, AI-assisted underwriting, and robust portfolio management tools to modernize B2B equipment financing operations.
+        </Card>
+        <Card title="FLEX Insurance Premium Finance" href="flex-premium-finance" comingSoon="true">
+          A comprehensive SaaS platform that streamlines the entire insurance premium financing lifecycle, from loan origination to servicing.
+        </Card>
+      </div>
+    </div>
+  </div>
 </Layout>
 
