@@ -1,0 +1,69 @@
+#+title: Schaake Solutions Website
+
+* This website is for Schaake Solutions, LLC.
+
+* Products
+
+** FLEX Equipment Finance
+
+FLEX Equipment Finance is a SaaS platform and marketplace for equipment financing (B2B). FLEX facilitates equipment finance loan origination, servicing, and non-performing contract resolutions.
+
+*** Key Features
+
+**** Portals for Originators, Lenders, Borrowers, and Collectors
+
+**** Integrations with:
+
+***** DocuSign
+
+***** PayNet
+
+***** EquiFax
+
+***** LexisNexis
+
+***** Google Docs
+
+**** Loan Underwriting Features
+
+***** Credit report combined analsyis
+
+***** Tax return and bank statement attachment detection
+
+***** FLEX AI assistant to help with credit analysis
+
+**** Loan Agreement Features
+
+***** Flexible loan structuring including contact payments, skip payments, irregular payments, due date changes, etc.
+
+***** DocuSign electronic signing workflows without leaving FLEX
+
+***** ACH AutoPay account onboarding
+
+**** Loan Servicing Features
+
+***** AutoPay (ACH) account management
+
+***** Alerts for failed payments
+
+***** FLEX AI Assistent to help troubleshoot problem accounts
+
+***** Notices (e.g. notice of default) mailing (both physical and email) with read receipts, tracking, and alerts when notice deadlines pass unresolved
+
+**** Portfolio Management Features
+
+***** Robust general ledger accounting with flexible reporting
+
+***** Custom portfolio reports
+
+***** Trend charts
+
+***** Funding forcasting based on current funding pipeline and past throughput
+
+***** Equipment for resale management
+
+***** Deficiency tracking and management module
+
+
+
+
