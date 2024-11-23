@@ -16,7 +16,8 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="text-slate-800 bg-neutral-50">
-    <div class="container m-auto p-2 bg-blue-50 rounded shadow">
+    <div class="sticky top-0 z-50 w-full bg-neutral-50 pb-2">
+      <div class="container m-auto p-2 bg-blue-50 rounded shadow">
       <div class="flex justify-between items-center">
         <div class="flex items-center gap-x-2">
           <a href="/"><img src="/ss-logo.webp" class="w-24 inline drop-shadow-xl"/></a>
@@ -29,8 +30,9 @@ const { title } = Astro.props;
           <a href="mailto:info@schaake.solutions" class="text-blue-600 hover:text-blue-800 underline">Contact Us</a>
         </div>
       </div>
+      </div>
     </div>
-    <main class="p-4 container m-auto">
+    <main class="p-4 container m-auto mt-2">
 		  <slot />
     </main>
 	</body>
