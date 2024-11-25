@@ -15,8 +15,26 @@ import FlexLogo from '../components/FlexLogo.astro';
       </div>
     </div>
 
+    <!-- Navigation Bar -->
+    <nav class="sticky top-20 z-40 bg-white shadow-md rounded-lg mb-8">
+      <ul class="flex justify-center space-x-8 p-4">
+        <li>
+          <a href="#portal" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Portal Access</a>
+        </li>
+        <li>
+          <a href="#loan" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Loan Processing</a>
+        </li>
+        <li>
+          <a href="#servicing" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Servicing</a>
+        </li>
+        <li>
+          <a href="#testimonials" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Testimonials</a>
+        </li>
+      </ul>
+    </nav>
+
     <!-- Portal Access Section -->
-    <section class="pt-8 mb-8">
+    <section id="portal" class="pt-8 mb-8">
       <div class="flex flex-col md:flex-row gap-8">
         <div class="w-full md:w-1/2">
           <h2 class="text-2xl font-semibold text-gray-800 mb-6">Portal Access & Integrations</h2>
@@ -50,7 +68,7 @@ import FlexLogo from '../components/FlexLogo.astro';
     </section>
 
     <!-- Loan Processing Section -->
-    <section class="pt-8 mb-8">
+    <section id="loan" class="pt-8 mb-8">
       <div class="flex flex-col md:flex-row gap-8">
         <div class="w-full md:w-1/2">
           <h2 class="text-2xl font-semibold text-gray-800 mb-6">Loan Processing</h2>
@@ -82,7 +100,7 @@ import FlexLogo from '../components/FlexLogo.astro';
     </section>
 
     <!-- Servicing Section -->
-    <section class="pt-8 mb-8">
+    <section id="servicing" class="pt-8 mb-8">
       <div class="flex flex-col md:flex-row gap-8">
         <div class="w-full md:w-1/2">
           <h2 class="text-2xl font-semibold text-gray-800 mb-6">Servicing & Portfolio Management</h2>
@@ -117,7 +135,7 @@ import FlexLogo from '../components/FlexLogo.astro';
     </section>
 
     <!-- Testimonials Section -->
-    <section class="pt-8 mb-8">
+    <section id="testimonials" class="pt-8 mb-8">
       <h2 class="text-2xl font-semibold text-gray-800 mb-6">Client Testimonials</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Mark Capital Finance Testimonial -->
@@ -150,4 +168,45 @@ import FlexLogo from '../components/FlexLogo.astro';
     </section>
   </div>
 </Layout>
+
+<script>
+  // Scroll spy functionality
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  const observerOptions = {
+    rootMargin: '-20% 0px -70% 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Remove active class from all links
+        navLinks.forEach(link => {
+          link.classList.remove('text-blue-600', 'font-semibold');
+          link.classList.add('text-gray-600');
+        });
+        
+        // Add active class to current section's link
+        const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+        if (activeLink) {
+          activeLink.classList.remove('text-gray-600');
+          activeLink.classList.add('text-blue-600', 'font-semibold');
+        }
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => observer.observe(section));
+
+  // Smooth scroll behavior
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
 
