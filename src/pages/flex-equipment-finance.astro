@@ -1,4 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import westOneLogo from '../assets/west-one-logo.png';
+import timberlineLogo from '../assets/timberline-logo.webp';
+import markCapitalLogo from '../assets/mark-capital-logo.png';
+import screenshot1 from '../assets/screenshot_originator_1.png';
+import screenshot2 from '../assets/screenshot_credit_flex-ai2.png';
+import screenshot3 from '../assets/screenshot_lender_trends.png';
 import Layout from '../layouts/Layout.astro';
 import FlexLogo from '../components/FlexLogo.astro';
 ---
@@ -6,7 +13,7 @@ import FlexLogo from '../components/FlexLogo.astro';
 <Layout title="Schaake Solutions - FLEX Equipment Finance">
   <div class="max-w-6xl mx-auto p-8 divide-y">
     <div class="sticky top-20 z-40 bg-white shadow-md rounded-lg pt-8 mb-8 flex flex-col items-center">
-      <h1 class="text-4xl font-bold text-gray-900 flex items-center gap-x-2"><FlexLogo heightClass="h-8"/>FLEX Equipment Finance</h1>
+      <h1 class="text-4xl font-bold text-gray-700 flex items-center gap-x-2"><FlexLogo heightClass="h-8"/>FLEX Equipment Finance</h1>
 
       <!-- Navigation Bar -->
       <nav class="">
@@ -37,13 +44,13 @@ import FlexLogo from '../components/FlexLogo.astro';
     <!-- Portal Access Section -->
     <section id="portal" class="pt-8 mb-8 scroll-mt-48">
       <div class="flex flex-col md:flex-row gap-8">
-        <div class="w-full md:w-1/2">
+        <div class="w-full md:w-1/3">
           <h2 class="text-2xl font-semibold text-gray-800 mb-6">Portal Access & Integrations</h2>
           <div class="bg-white rounded-lg shadow-md p-6 mb-6">
             <h3 class="text-xl font-semibold text-gray-800 mb-4">User Portals</h3>
             <ul class="list-disc list-inside text-gray-600">
               <li>Originators</li>
-              <li>Lenders</li>
+              <li>Lenders (and Read-Only Auditors)</li>
               <li>Borrowers</li>
               <li>Collectors</li>
             </ul>
@@ -59,11 +66,8 @@ import FlexLogo from '../components/FlexLogo.astro';
             </ul>
           </div>
         </div>
-        <div class="w-full md:w-1/2 bg-gray-100 rounded-lg p-4 flex items-center justify-center">
-          <div class="text-gray-500 text-center">
-            <p class="text-lg font-semibold">Portal Screenshot</p>
-            <p class="text-sm">(Placeholder)</p>
-          </div>
+        <div class="w-full md:w-2/3 bg-gray-100 rounded-lg p-4 flex items-center justify-center">
+          <Image src={screenshot1} alt="Originator Portal"/>
         </div>
       </div>
     </section>
@@ -71,7 +75,7 @@ import FlexLogo from '../components/FlexLogo.astro';
     <!-- Loan Processing Section -->
     <section id="loan" class="pt-8 mb-8 scroll-mt-48">
       <div class="flex flex-col md:flex-row gap-8">
-        <div class="w-full md:w-1/2">
+        <div class="w-full md:w-1/3">
           <h2 class="text-2xl font-semibold text-gray-800 mb-6">Loan Processing</h2>
           <div class="bg-white rounded-lg shadow-md p-6 mb-6">
             <h3 class="text-xl font-semibold text-gray-800 mb-4">Loan Underwriting</h3>
@@ -92,11 +96,8 @@ import FlexLogo from '../components/FlexLogo.astro';
             </ul>
           </div>
         </div>
-        <div class="w-full md:w-1/2 bg-gray-100 rounded-lg p-4 flex items-center justify-center">
-          <div class="text-gray-500 text-center">
-            <p class="text-lg font-semibold">Loan Processing Screenshot</p>
-            <p class="text-sm">(Placeholder)</p>
-          </div>
+        <div class="w-full md:w-2/3 bg-gray-100 rounded-lg p-4 flex items-center justify-center">
+          <Image src={screenshot2} alt="FLEX AI"/>
         </div>
       </div>
     </section>
@@ -104,7 +105,7 @@ import FlexLogo from '../components/FlexLogo.astro';
     <!-- Servicing Section -->
     <section id="servicing" class="pt-8 mb-8 scroll-mt-48">
       <div class="flex flex-col md:flex-row gap-8">
-        <div class="w-full md:w-1/2">
+        <div class="w-full md:w-1/3">
           <h2 class="text-2xl font-semibold text-gray-800 mb-6">Servicing & Portfolio Management</h2>
           <div class="bg-white rounded-lg shadow-md p-6 mb-6">
             <h3 class="text-xl font-semibold text-gray-800 mb-4">Loan Servicing</h3>
@@ -127,11 +128,8 @@ import FlexLogo from '../components/FlexLogo.astro';
             </ul>
           </div>
         </div>
-        <div class="w-full md:w-1/2 bg-gray-100 rounded-lg p-4 flex items-center justify-center">
-          <div class="text-gray-500 text-center">
-            <p class="text-lg font-semibold">Servicing Screenshot</p>
-            <p class="text-sm">(Placeholder)</p>
-          </div>
+        <div class="w-full md:w-2/3 bg-gray-100 rounded-lg p-4 flex items-center justify-center">
+          <Image src={screenshot3} alt="Lender Dashboard"/>
         </div>
       </div>
     </section>
@@ -142,28 +140,28 @@ import FlexLogo from '../components/FlexLogo.astro';
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Mark Capital Finance Testimonial -->
         <div class="bg-white rounded-lg shadow-md p-6">
-          <div class="h-16 w-32 bg-gray-100 rounded mb-4 flex items-center justify-center">
-            <p class="text-gray-500 text-sm text-center">Logo Placeholder</p>
+          <div class="h-16 w-32 rounded mb-4 p-1 flex items-center justify-center drop-shadow">
+            <Image src={markCapitalLogo} alt="Mark Capital Finance"/>
           </div>
-          <p class="text-gray-600 italic mb-4">"FLEX Equipment Finance has streamlined our entire lending process, making it easier than ever to serve our customers."</p>
+          <p class="text-gray-600 italic mb-4">"FLEX has enabled us to scale to a 20MM loan portfolio with only three people. We joke that our day-to-day work is letting FLEX "boss us around" since it alerts us of any issues that need attention."</p>
           <div class="text-gray-800 font-semibold">Mark Capital Finance, LLC</div>
         </div>
 
         <!-- West One Finance Testimonial -->
         <div class="bg-white rounded-lg shadow-md p-6">
-          <div class="h-16 w-32 bg-gray-100 rounded mb-4 flex items-center justify-center">
-            <p class="text-gray-500 text-sm text-center">Logo Placeholder</p>
+          <div class="h-16 w-32 rounded mb-4 p-1 flex items-center justify-center drop-shadow">
+            <Image src={westOneLogo} alt="West One Finance"/>
           </div>
-          <p class="text-gray-600 italic mb-4">"The automated underwriting features have significantly reduced our processing time while maintaining high quality standards."</p>
+          <p class="text-gray-600 italic mb-4">"FLEX is the premier end to end software program for the Equipment Finance industry, it is intuitive, and very user friendly. Mark is very knowledgeable in the finance industry, and you can see that reflected in every aspect of the program. FLEX is always evolving and improving to help us do our job faster and more efficiently. Mark provides excellent customer service and we are so grateful for this amazing software program."</p>
           <div class="text-gray-800 font-semibold">West One Finance, LLC</div>
         </div>
 
         <!-- Timberline Finance Testimonial -->
         <div class="bg-white rounded-lg shadow-md p-6">
-          <div class="h-16 w-32 bg-gray-100 rounded mb-4 flex items-center justify-center">
-            <p class="text-gray-500 text-sm text-center">Logo Placeholder</p>
+          <div class="h-16 w-32 rounded mb-4 p-1 flex items-center justify-center drop-shadow">
+            <Image src={timberlineLogo} alt="Timberline Finance"/>
           </div>
-          <p class="text-gray-600 italic mb-4">"The portfolio management tools have given us unprecedented visibility into our lending operations."</p>
+          <p class="text-gray-600 italic mb-4">"The efficiency of FLEX and ease of leveraging its features is incredible. Each user gains the advantage of comprehensive portfolio management which would ordinarily take several roles or systems to accomplish."</p>
           <div class="text-gray-800 font-semibold">Timberline Finance, LLC</div>
         </div>
       </div>

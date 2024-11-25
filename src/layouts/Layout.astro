@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import ssLogo from '../assets/schaake-solutions-logo.png';
+import SchaakeSolutionsLogo from '../components/SchaakeSolutionsLogo.astro'
 interface Props {
 	title: string;
 }
@@ -17,22 +20,22 @@ const { title } = Astro.props;
 	</head>
 	<body class="text-slate-800 bg-neutral-50">
     <div class="sticky top-0 z-50 w-full bg-neutral-50">
-      <div class="container m-auto p-2 bg-blue-50 rounded drop-shadow">
-      <div class="flex justify-between items-center">
-        <div class="flex items-center gap-x-2">
-          <a href="/"><img src="/ss-logo.webp" class="w-16 inline drop-shadow-xl"/></a>
+      <div class="m-auto py-4 px-8 bg-slate-100 rounded drop-shadow">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-x-2">
+            <a href="/"><SchaakeSolutionsLogo heightClass="h-16"/></a>
+            <div>
+              <div class="text-3xl font-bold text-slate-600 drop-shadow mt-[3px]">Schaake Solutions</div>
+              <div class="text-slate-700 italic">Innovating since 2017</div>
+            </div>
+          </div>
           <div>
-            <div class="text-3xl font-bold text-slate-600 drop-shadow mt-[3px]">Schaake Solutions</div>
-            <div class="text-slate-700 italic">Innovating since 2017</div>
+            <a href="mailto:info@schaake.solutions" class="text-blue-600 hover:text-blue-800 underline">Contact Us</a>
           </div>
         </div>
-        <div>
-          <a href="mailto:info@schaake.solutions" class="text-blue-600 hover:text-blue-800 underline">Contact Us</a>
-        </div>
-      </div>
       </div>
     </div>
-    <main class="p-4 container m-auto mt-2">
+    <main class="p-4 m-auto mt-2">
 		  <slot />
     </main>
     <footer class="bg-gray-100 mt-16">

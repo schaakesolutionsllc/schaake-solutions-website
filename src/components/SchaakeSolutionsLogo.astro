@@ -1,0 +1,56 @@
+---
+interface Props {
+	heightClass: string;
+}
+
+const { heightClass } = Astro.props;
+const classes = "drop-shadow ml-2 " + heightClass;
+---
+
+<svg
+   class={classes}
+   viewBox="0 0 132.60199 132.60199">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient11"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#393b5a;stop-opacity:1;"
+         offset="0"
+         id="stop11" />
+      <stop
+         style="stop-color:#393b5a;stop-opacity:0.41999987;"
+         offset="0.6869455"
+         id="stop12" />
+      <stop
+         style="stop-color:#393b5a;stop-opacity:0.9254902;"
+         offset="1"
+         id="stop13" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient11"
+       id="linearGradient12"
+       x1="43.152023"
+       y1="122.51251"
+       x2="175.75401"
+       y2="122.51251"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-41.085,-27.4725)" />
+  </defs>
+  <g transform="translate(-2.0670257,-28.739015)">
+    <circle
+       style="opacity:1;fill:none;stroke:url(#linearGradient12);stroke-width:15.1414;stroke-dasharray:none"
+       id="path3"
+       cx="68.368019"
+       cy="95.040009"
+       r="58.730293" />
+  </g>
+  <g transform="translate(-2.0670257,-28.739015)">
+    <path
+       id="circle6"
+       style="opacity:1;fill:none;stroke:#525791;stroke-width:14.1992;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       d="m 33.190414,103.64264 c 3.893621,16.35322 18.538822,27.86972 35.349026,27.79728 16.81019,-0.0724 31.3556,-11.7147 35.00631,-27.78409 L 35.034648,80.19122 c 5.53375,-12.760022 18.760841,-21.580002 33.419542,-21.551381 14.6587,0.0286 27.85124,8.900183 33.40713,22.465221"
+       />
+  </g>
+</svg>
