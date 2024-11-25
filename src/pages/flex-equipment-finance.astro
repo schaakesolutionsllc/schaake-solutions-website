@@ -5,36 +5,37 @@ import FlexLogo from '../components/FlexLogo.astro';
 
 <Layout title="Schaake Solutions - FLEX Equipment Finance">
   <div class="max-w-6xl mx-auto p-8 divide-y">
-    <div>
-      <h1 class="text-4xl font-bold text-gray-900 mb-6 flex items-center gap-x-2"><FlexLogo heightClass="h-8"/>FLEX Equipment Finance</h1>
-    
-      <div class="prose mb-12">
-        <p class="text-lg text-gray-700">
-          A comprehensive SaaS platform and marketplace facilitating B2B equipment financing through loan origination, servicing, and non-performing contract resolutions.
-        </p>
-      </div>
+    <div class="sticky top-20 z-40 bg-white shadow-md rounded-lg pt-8 mb-8 flex flex-col items-center">
+      <h1 class="text-4xl font-bold text-gray-900 flex items-center gap-x-2"><FlexLogo heightClass="h-8"/>FLEX Equipment Finance</h1>
+
+      <!-- Navigation Bar -->
+      <nav class="">
+        <ul class="flex justify-center space-x-8 p-4">
+          <li>
+            <a href="#portal" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Portal Access</a>
+          </li>
+          <li>
+            <a href="#loan" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Loan Processing</a>
+          </li>
+          <li>
+            <a href="#servicing" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Servicing</a>
+          </li>
+          <li>
+            <a href="#testimonials" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Testimonials</a>
+          </li>
+        </ul>
+      </nav>
     </div>
 
-    <!-- Navigation Bar -->
-    <nav class="sticky top-20 z-40 bg-white shadow-md rounded-lg mb-8">
-      <ul class="flex justify-center space-x-8 p-4">
-        <li>
-          <a href="#portal" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Portal Access</a>
-        </li>
-        <li>
-          <a href="#loan" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Loan Processing</a>
-        </li>
-        <li>
-          <a href="#servicing" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Servicing</a>
-        </li>
-        <li>
-          <a href="#testimonials" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Testimonials</a>
-        </li>
-      </ul>
-    </nav>
+    <div class="prose pt-12 mb-12">
+      <p class="text-lg text-gray-700">
+        A comprehensive SaaS platform and marketplace facilitating B2B equipment financing through loan origination, servicing, and non-performing contract resolutions.
+      </p>
+    </div>
+    
 
     <!-- Portal Access Section -->
-    <section id="portal" class="pt-8 mb-8">
+    <section id="portal" class="pt-8 mb-8 scroll-mt-48">
       <div class="flex flex-col md:flex-row gap-8">
         <div class="w-full md:w-1/2">
           <h2 class="text-2xl font-semibold text-gray-800 mb-6">Portal Access & Integrations</h2>
@@ -68,7 +69,7 @@ import FlexLogo from '../components/FlexLogo.astro';
     </section>
 
     <!-- Loan Processing Section -->
-    <section id="loan" class="pt-8 mb-8">
+    <section id="loan" class="pt-8 mb-8 scroll-mt-48">
       <div class="flex flex-col md:flex-row gap-8">
         <div class="w-full md:w-1/2">
           <h2 class="text-2xl font-semibold text-gray-800 mb-6">Loan Processing</h2>
@@ -84,6 +85,7 @@ import FlexLogo from '../components/FlexLogo.astro';
             <h3 class="text-xl font-semibold text-gray-800 mb-4">Loan Agreements</h3>
             <ul class="list-disc list-inside text-gray-600">
               <li>Flexible loan structuring</li>
+              <li>Configurable Pricing Guide</li>
               <li>Integrated DocuSign workflow</li>
               <li>Borrower AutoPay</li>
               <li>ACH Vendor Funding</li>
@@ -100,15 +102,15 @@ import FlexLogo from '../components/FlexLogo.astro';
     </section>
 
     <!-- Servicing Section -->
-    <section id="servicing" class="pt-8 mb-8">
+    <section id="servicing" class="pt-8 mb-8 scroll-mt-48">
       <div class="flex flex-col md:flex-row gap-8">
         <div class="w-full md:w-1/2">
           <h2 class="text-2xl font-semibold text-gray-800 mb-6">Servicing & Portfolio Management</h2>
           <div class="bg-white rounded-lg shadow-md p-6 mb-6">
             <h3 class="text-xl font-semibold text-gray-800 mb-4">Loan Servicing</h3>
             <ul class="list-disc list-inside text-gray-600">
-              <li>AutoPay management</li>
-              <li>Payment alerts</li>
+              <li>AutoPay (ACH)</li>
+              <li>Payment failure alerts</li>
               <li>AI troubleshooting</li>
               <li>Automated notices</li>
             </ul>
@@ -135,7 +137,7 @@ import FlexLogo from '../components/FlexLogo.astro';
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="pt-8 mb-8">
+    <section id="testimonials" class="pt-8 mb-8 scroll-mt-48">
       <h2 class="text-2xl font-semibold text-gray-800 mb-6">Client Testimonials</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Mark Capital Finance Testimonial -->
@@ -170,43 +172,43 @@ import FlexLogo from '../components/FlexLogo.astro';
 </Layout>
 
 <script>
-  // Scroll spy functionality
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
+// Scroll spy functionality
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
 
-  const observerOptions = {
-    rootMargin: '-20% 0px -70% 0px'
-  };
+const observerOptions = {
+  rootMargin: '-20% 0px -70% 0px'
+};
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Remove active class from all links
-        navLinks.forEach(link => {
-          link.classList.remove('text-blue-600', 'font-semibold');
-          link.classList.add('text-gray-600');
-        });
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Remove active class from all links
+      navLinks.forEach(link => {
+        link.classList.remove('text-blue-600', 'font-semibold');
+        link.classList.add('text-gray-600');
+      });
         
-        // Add active class to current section's link
-        const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-        if (activeLink) {
-          activeLink.classList.remove('text-gray-600');
-          activeLink.classList.add('text-blue-600', 'font-semibold');
-        }
+      // Add active class to current section's link
+      const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+      if (activeLink) {
+        activeLink.classList.remove('text-gray-600');
+        activeLink.classList.add('text-blue-600', 'font-semibold');
       }
-    });
-  }, observerOptions);
-
-  sections.forEach(section => observer.observe(section));
-
-  // Smooth scroll behavior
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href');
-      const targetSection = document.querySelector(targetId);
-      targetSection.scrollIntoView({ behavior: 'smooth' });
-    });
+    }
   });
+}, observerOptions);
+
+sections.forEach(section => observer.observe(section));
+
+// Smooth scroll behavior
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    targetSection.scrollIntoView({ behavior: 'smooth' });
+  });
+});
 </script>
 
