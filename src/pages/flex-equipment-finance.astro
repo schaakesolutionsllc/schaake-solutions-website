@@ -11,27 +11,9 @@ import FlexLogo from '../components/FlexLogo.astro';
 ---
 
 <Layout title="Schaake Solutions - FLEX Equipment Finance">
-  <div class="max-w-6xl mx-auto p-8 divide-y">
-    <div class="sticky top-20 z-40 bg-white shadow-md rounded-lg pt-8 mb-8 flex flex-col items-center">
+  <div class="max-w-6xl mx-auto p-4 divide-y">
+    <div class="sticky top-20 z-40 bg-white shadow-md rounded-lg py-8 mb-8 flex flex-col items-center">
       <h1 class="text-4xl font-bold text-gray-700 flex items-center gap-x-2"><FlexLogo heightClass="h-8"/>FLEX Equipment Finance</h1>
-
-      <!-- Navigation Bar -->
-      <nav class="">
-        <ul class="flex justify-center space-x-8 p-4">
-          <li>
-            <a href="#portal" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Portal Access</a>
-          </li>
-          <li>
-            <a href="#loan" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Loan Processing</a>
-          </li>
-          <li>
-            <a href="#servicing" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Servicing</a>
-          </li>
-          <li>
-            <a href="#testimonials" class="nav-link text-gray-600 hover:text-blue-600 transition-colors">Testimonials</a>
-          </li>
-        </ul>
-      </nav>
     </div>
 
     <div class="prose pt-12 mb-12">
@@ -168,45 +150,3 @@ import FlexLogo from '../components/FlexLogo.astro';
     </section>
   </div>
 </Layout>
-
-<script>
-// Scroll spy functionality
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-
-const observerOptions = {
-  rootMargin: '-20% 0px -70% 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Remove active class from all links
-      navLinks.forEach(link => {
-        link.classList.remove('text-blue-600', 'font-semibold');
-        link.classList.add('text-gray-600');
-      });
-        
-      // Add active class to current section's link
-      const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-      if (activeLink) {
-        activeLink.classList.remove('text-gray-600');
-        activeLink.classList.add('text-blue-600', 'font-semibold');
-      }
-    }
-  });
-}, observerOptions);
-
-sections.forEach(section => observer.observe(section));
-
-// Smooth scroll behavior
-navLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const targetId = link.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
-    targetSection.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-</script>
-
