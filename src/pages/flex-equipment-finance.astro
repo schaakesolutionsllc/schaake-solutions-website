@@ -21,11 +21,11 @@ import FlexLogo from '../components/FlexLogo.astro';
         
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex gap-6">
-          <a href="#portal" class="text-gray-600 hover:text-gray-900">Portal Access</a>
-          <a href="#loan" class="text-gray-600 hover:text-gray-900">Loan Processing</a>
-          <a href="#servicing" class="text-gray-600 hover:text-gray-900">Servicing</a>
-          <a href="#testimonials" class="text-gray-600 hover:text-gray-900">Testimonials</a>
-          <a href="#pricing" class="text-gray-600 hover:text-gray-900">Pricing</a>
+          <a href="#portal" class="text-gray-600 hover:text-gray-900 nav-link" data-section="portal">Portal Access</a>
+          <a href="#loan" class="text-gray-600 hover:text-gray-900 nav-link" data-section="loan">Loan Processing</a>
+          <a href="#servicing" class="text-gray-600 hover:text-gray-900 nav-link" data-section="servicing">Servicing</a>
+          <a href="#testimonials" class="text-gray-600 hover:text-gray-900 nav-link" data-section="testimonials">Testimonials</a>
+          <a href="#pricing" class="text-gray-600 hover:text-gray-900 nav-link" data-section="pricing">Pricing</a>
         </nav>
 
         <!-- Mobile Menu Button -->
@@ -39,11 +39,11 @@ import FlexLogo from '../components/FlexLogo.astro';
       <!-- Mobile Navigation -->
       <div id="mobileMenu" class="hidden md:hidden mt-4 py-2">
         <nav class="flex flex-col gap-2">
-          <a href="#portal" class="text-gray-600 hover:text-gray-900 py-2">Portal Access</a>
-          <a href="#loan" class="text-gray-600 hover:text-gray-900 py-2">Loan Processing</a>
-          <a href="#servicing" class="text-gray-600 hover:text-gray-900 py-2">Servicing</a>
-          <a href="#testimonials" class="text-gray-600 hover:text-gray-900 py-2">Testimonials</a>
-          <a href="#pricing" class="text-gray-600 hover:text-gray-900 py-2">Pricing</a>
+          <a href="#portal" class="text-gray-600 hover:text-gray-900 py-2 nav-link" data-section="portal">Portal Access</a>
+          <a href="#loan" class="text-gray-600 hover:text-gray-900 py-2 nav-link" data-section="loan">Loan Processing</a>
+          <a href="#servicing" class="text-gray-600 hover:text-gray-900 py-2 nav-link" data-section="servicing">Servicing</a>
+          <a href="#testimonials" class="text-gray-600 hover:text-gray-900 py-2 nav-link" data-section="testimonials">Testimonials</a>
+          <a href="#pricing" class="text-gray-600 hover:text-gray-900 py-2 nav-link" data-section="pricing">Pricing</a>
         </nav>
       </div>
     </div>
@@ -51,7 +51,9 @@ import FlexLogo from '../components/FlexLogo.astro';
     <script>
       const menuButton = document.getElementById('menuButton');
       const mobileMenu = document.getElementById('mobileMenu');
+      const navLinks = document.querySelectorAll('.nav-link');
 
+      // Mobile menu toggle
       menuButton?.addEventListener('click', () => {
         mobileMenu?.classList.toggle('hidden');
       });
@@ -65,6 +67,37 @@ import FlexLogo from '../components/FlexLogo.astro';
           });
         });
       }
+
+      // Intersection Observer for section highlighting
+      const observerOptions = {
+        root: null,
+        rootMargin: '-50% 0px',
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Remove active class from all links
+            navLinks.forEach(link => {
+              link.classList.remove('text-blue-600', 'font-semibold');
+              link.classList.add('text-gray-600');
+            });
+            
+            // Add active class to corresponding nav link
+            const activeLinks = document.querySelectorAll(`.nav-link[data-section="${entry.target.id}"]`);
+            activeLinks.forEach(link => {
+              link.classList.remove('text-gray-600');
+              link.classList.add('text-blue-600', 'font-semibold');
+            });
+          }
+        });
+      }, observerOptions);
+
+      // Observe all sections
+      document.querySelectorAll('section[id]').forEach((section) => {
+        observer.observe(section);
+      });
     </script>
 
     <div class="prose pt-12 mb-12">
