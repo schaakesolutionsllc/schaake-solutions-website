@@ -2,7 +2,7 @@
 
 * This website is for Schaake Solutions, LLC.
 
-* Products
+* Products and Services
 
 ** FLEX Equipment Finance (FLEX EF)
 
@@ -67,6 +67,42 @@ FLEX Equipment Finance is a SaaS platform and marketplace for equipment financin
 
 
 
-** FLEX Insurance Premium Finance (FLEX IPF)
+** AI Consulting Services
 
-This product is in planning stages and is expected to be released in 2025. FLEX IPF will be similar to FLEX EF except for insurance premium finance agreements instead of equipment finance agreements. Importantly, US state-specific regulations will be respected by the system making is simpler for lenders to comply with the various differences by state.
+Schaake Solutions offers expert AI consulting services to help businesses stay ahead of the AI revolution. Our services include:
+
+*** Key Services
+
+**** AI Strategy Development
+- AI readiness assessment
+- Use case identification and prioritization
+- Technology stack recommendations
+- ROI analysis and business case development
+
+**** Custom AI Solutions
+- Custom model development and training
+- AI-powered automation workflows
+- Chatbots and virtual assistants
+- Predictive analytics and forecasting
+
+**** AI Integration & Implementation
+- API integration and development
+- Data pipeline architecture
+- Legacy system modernization
+- Performance optimization
+
+**** Training & Support
+- Executive AI workshops
+- Technical team training
+- Best practices documentation
+- Ongoing support and optimization
+
+*** Areas of Expertise
+
+We provide AI consulting services across various industries including:
+- Finance & Banking
+- Healthcare
+- Manufacturing
+- Retail & E-commerce
+- Legal & Compliance
+- Customer Service
