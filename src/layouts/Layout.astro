@@ -19,50 +19,51 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
 	</head>
-	<body class="text-slate-800 bg-neutral-50 max-w-6xl mx-auto">
-    <div class="sticky top-0 z-50 w-full bg-neutral-50">
-      <div class="m-auto py-4 px-8 bg-slate-100 rounded drop-shadow">
+	<body class="text-slate-800 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 max-w-6xl mx-auto">
+    <div class="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 border-b border-white/20 shadow-lg shadow-purple-500/5">
+      <div class="m-auto py-4 px-8">
         <div class="flex justify-between items-center">
-          <div class="flex items-center gap-x-2">
-            <a href="/"><SchaakeSolutionsLogo heightClass="h-16"/></a>
+          <div class="flex items-center gap-x-3">
+            <a href="/" class="transition-transform hover:scale-105"><SchaakeSolutionsLogo heightClass="h-16"/></a>
             <div>
-              <div class="text-3xl font-bold text-slate-600 mt-[3px]" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);">Schaake Solutions</div>
-              <div class="text-slate-700 italic">Software. Leadership. Innovation.</div>
+              <div class="text-3xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent mt-[3px]">Schaake Solutions</div>
+              <div class="text-slate-600 text-sm font-medium">Software. Leadership. Innovation.</div>
             </div>
           </div>
           <div>
-            <Link href="mailto:info@schaake.solutions">Contact Us</Link>
+            <Link href="mailto:info@schaake.solutions" class="px-6 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105">Contact Us</Link>
           </div>
         </div>
       </div>
     </div>
-    <main class="p-4 m-auto mt-2">
+    <main class="p-4 m-auto mt-8">
 		  <slot />
     </main>
-    <footer class="bg-gray-100 mt-16">
-      <div class="container mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer class="mt-24 bg-gradient-to-br from-slate-900 via-purple-900/90 to-slate-900 text-white relative overflow-hidden">
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItaDJWMzRoLTJ6bTAtNGgydjJoLTJ2LTJ6bTAtNGgydjJoLTJ2LTJ6bTAtNGgydjJoLTJ2LTJ6bTAtNGgydjJoLTJ2LTJ6bTAtNGgydjJoLTJ2LTJ6bTAtNGgydjJoLTJ2LTJ6bTAtNGgydjJoLTJ2LTJ6bTAtNGgydjJoLTJ2LTJ6bS00IDB2Mmg0di0yaC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-40"></div>
+      <div class="container mx-auto px-4 py-12 relative">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 class="text-lg font-semibold mb-4">Products & Services</h3>
-            <ul class="space-y-2">
-              <li><a href="/flex-equipment-finance" class="text-gray-600 hover:text-blue-600">FLEX Equipment Finance</a></li>
-              <li><a href="/services" class="text-gray-600 hover:text-blue-600">Consulting Services</a></li>
+            <h3 class="text-lg font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Products & Services</h3>
+            <ul class="space-y-3">
+              <li><a href="/flex-equipment-finance" class="text-gray-300 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block">FLEX Equipment Finance</a></li>
+              <li><a href="/services" class="text-gray-300 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block">Consulting Services</a></li>
             </ul>
           </div>
           <div>
-            <h3 class="text-lg font-semibold mb-4">Contact</h3>
-            <ul class="space-y-2">
-              <li><Link href="mailto:info@schaake.solutions">info@schaake.solutions</Link></li>
+            <h3 class="text-lg font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Contact</h3>
+            <ul class="space-y-3">
+              <li><Link href="mailto:info@schaake.solutions" class="text-gray-300 hover:text-white transition-colors duration-200">info@schaake.solutions</Link></li>
             </ul>
           </div>
           <div>
-            <h3 class="text-lg font-semibold mb-4">Company</h3>
-            <ul class="space-y-2">
-              <li><a href="/" class="text-gray-600 hover:text-blue-600">Home</a></li>
+            <h3 class="text-lg font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Company</h3>
+            <ul class="space-y-3">
+              <li><a href="/" class="text-gray-300 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block">Home</a></li>
             </ul>
           </div>
         </div>
-        <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
+        <div class="border-t border-white/10 pt-8 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} Schaake Solutions. All rights reserved.</p>
         </div>
       </div>

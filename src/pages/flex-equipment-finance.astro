@@ -12,20 +12,20 @@ import FlexLogo from '../components/FlexLogo.astro';
 ---
 
 <Layout title="Schaake Solutions - FLEX Equipment Finance">
-  <div class="max-w-6xl mx-auto divide-y">
-    <div class="sticky top-24 z-40 bg-white shadow-md rounded py-4 px-6 mb-4">
+  <div class="max-w-6xl mx-auto space-y-16">
+    <div class="sticky top-24 z-40 backdrop-blur-md bg-white/90 shadow-xl shadow-blue-500/10 rounded-2xl py-5 px-8 mb-8 border border-blue-100/50">
       <div class="flex justify-between items-center">
-        <h1 class="text-3xl font-bold text-gray-700 flex items-center gap-x-2">
-          <FlexLogo heightClass="h-6"/>FLEX Equipment Finance
+        <h1 class="text-3xl font-bold flex items-center gap-x-3">
+          <FlexLogo heightClass="h-8"/><span class="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">FLEX Equipment Finance</span>
         </h1>
-        
+
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex gap-6">
-          <a href="#portal" class="text-gray-600 hover:text-gray-900 nav-link" data-section="portal">Portal Access</a>
-          <a href="#loan" class="text-gray-600 hover:text-gray-900 nav-link" data-section="loan">Loan Processing</a>
-          <a href="#servicing" class="text-gray-600 hover:text-gray-900 nav-link" data-section="servicing">Servicing</a>
-          <a href="#testimonials" class="text-gray-600 hover:text-gray-900 nav-link" data-section="testimonials">Testimonials</a>
-          <a href="#pricing" class="text-gray-600 hover:text-gray-900 nav-link" data-section="pricing">Pricing</a>
+          <a href="#portal" class="text-slate-600 hover:text-blue-600 nav-link transition-colors duration-200 font-medium" data-section="portal">Portal Access</a>
+          <a href="#loan" class="text-slate-600 hover:text-blue-600 nav-link transition-colors duration-200 font-medium" data-section="loan">Loan Processing</a>
+          <a href="#servicing" class="text-slate-600 hover:text-blue-600 nav-link transition-colors duration-200 font-medium" data-section="servicing">Servicing</a>
+          <a href="#testimonials" class="text-slate-600 hover:text-blue-600 nav-link transition-colors duration-200 font-medium" data-section="testimonials">Testimonials</a>
+          <a href="#pricing" class="text-slate-600 hover:text-blue-600 nav-link transition-colors duration-200 font-medium" data-section="pricing">Pricing</a>
         </nav>
 
         <!-- Mobile Menu Button -->
@@ -100,8 +100,8 @@ import FlexLogo from '../components/FlexLogo.astro';
       });
     </script>
 
-    <div class="prose pt-12 mb-12">
-      <p class="text-lg text-gray-700">
+    <div class="rounded-3xl bg-gradient-to-br from-white/80 to-blue-50/50 backdrop-blur-sm border border-white/20 shadow-xl p-8 mb-12">
+      <p class="text-xl text-slate-700 leading-relaxed text-center max-w-4xl mx-auto">
         A comprehensive SaaS platform and marketplace facilitating B2B equipment financing through loan origination, servicing, and non-performing contract resolutions.
       </p>
     </div>
@@ -112,23 +112,23 @@ import FlexLogo from '../components/FlexLogo.astro';
       <div class="flex flex-col md:flex-row gap-8">
         <div class="w-full md:w-1/3">
           <h2 class="text-2xl font-semibold text-gray-800 mb-6">Portal Access & Integrations</h2>
-          <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-4">User Portals</h3>
-            <ul class="list-disc list-inside text-gray-600">
-              <li>Originators</li>
-              <li>Lenders (and Read-Only Auditors)</li>
-              <li>Borrowers</li>
-              <li>Collectors</li>
+          <div class="rounded-2xl bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/30 backdrop-blur-sm border border-blue-200/50 shadow-lg p-6 mb-6">
+            <h3 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4">User Portals</h3>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start"><span class="text-blue-500 mr-2">▸</span>Originators</li>
+              <li class="flex items-start"><span class="text-blue-500 mr-2">▸</span>Lenders (and Read-Only Auditors)</li>
+              <li class="flex items-start"><span class="text-blue-500 mr-2">▸</span>Borrowers</li>
+              <li class="flex items-start"><span class="text-blue-500 mr-2">▸</span>Collectors</li>
             </ul>
           </div>
-          <div class="bg-white rounded-lg shadow-md p-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-4">Key Integrations</h3>
-            <ul class="list-disc list-inside text-gray-600">
-              <li>DocuSign</li>
-              <li>PayNet</li>
-              <li>EquiFax</li>
-              <li>LexisNexis</li>
-              <li>Google Docs</li>
+          <div class="rounded-2xl bg-gradient-to-br from-white via-cyan-50/30 to-blue-50/30 backdrop-blur-sm border border-cyan-200/50 shadow-lg p-6">
+            <h3 class="text-xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent mb-4">Key Integrations</h3>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>DocuSign</li>
+              <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>PayNet</li>
+              <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>EquiFax</li>
+              <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>LexisNexis</li>
+              <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Google Docs</li>
             </ul>
           </div>
         </div>
@@ -143,24 +143,24 @@ import FlexLogo from '../components/FlexLogo.astro';
       <div class="flex flex-col md:flex-row gap-8">
         <div class="w-full md:w-1/3">
           <h2 class="text-2xl font-semibold text-gray-800 mb-6">Loan Processing</h2>
-          <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-4">AI-Driven Origination</h3>
-            <p class="text-gray-600 mb-3 text-sm">Originators upload documents and FLEX AI extracts all details for submission—eliminating data entry errors and accelerating the application process.</p>
-            <p class="text-gray-600 mb-3 text-sm font-semibold">For Lenders:</p>
-            <ul class="list-disc list-inside text-gray-600 text-sm mb-3">
-              <li>Auto-extraction of financial documents (P&L, balance sheet, bank statements, tax returns)</li>
-              <li>Credit officers start analysis immediately—no manual spreading required</li>
-              <li>Combined credit analysis with integrated bureau data</li>
+          <div class="rounded-2xl bg-gradient-to-br from-white via-indigo-50/30 to-purple-50/30 backdrop-blur-sm border border-indigo-200/50 shadow-lg p-6 mb-6">
+            <h3 class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">AI-Driven Origination</h3>
+            <p class="text-slate-600 mb-4 leading-relaxed">Originators upload documents and FLEX AI extracts all details for submission—eliminating data entry errors and accelerating the application process.</p>
+            <p class="text-slate-700 mb-3 font-semibold">For Lenders:</p>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start"><span class="text-indigo-500 mr-2">▸</span>Auto-extraction of financial documents (P&L, balance sheet, bank statements, tax returns)</li>
+              <li class="flex items-start"><span class="text-indigo-500 mr-2">▸</span>Credit officers start analysis immediately—no manual spreading required</li>
+              <li class="flex items-start"><span class="text-indigo-500 mr-2">▸</span>Combined credit analysis with integrated bureau data</li>
             </ul>
           </div>
-          <div class="bg-white rounded-lg shadow-md p-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-4">Loan Agreements</h3>
-            <ul class="list-disc list-inside text-gray-600">
-              <li>Flexible loan structuring</li>
-              <li>Configurable Pricing Guide</li>
-              <li>Integrated DocuSign workflow</li>
-              <li>Borrower AutoPay</li>
-              <li>ACH Vendor Funding</li>
+          <div class="rounded-2xl bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 backdrop-blur-sm border border-purple-200/50 shadow-lg p-6">
+            <h3 class="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">Loan Agreements</h3>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start"><span class="text-purple-500 mr-2">▸</span>Flexible loan structuring</li>
+              <li class="flex items-start"><span class="text-purple-500 mr-2">▸</span>Configurable Pricing Guide</li>
+              <li class="flex items-start"><span class="text-purple-500 mr-2">▸</span>Integrated DocuSign workflow</li>
+              <li class="flex items-start"><span class="text-purple-500 mr-2">▸</span>Borrower AutoPay</li>
+              <li class="flex items-start"><span class="text-purple-500 mr-2">▸</span>ACH Vendor Funding</li>
             </ul>
           </div>
         </div>
@@ -175,24 +175,24 @@ import FlexLogo from '../components/FlexLogo.astro';
       <div class="flex flex-col md:flex-row gap-8">
         <div class="w-full md:w-1/3">
           <h2 class="text-2xl font-semibold text-gray-800 mb-6">Servicing & Portfolio Management</h2>
-          <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-4">Loan Servicing</h3>
-            <ul class="list-disc list-inside text-gray-600">
-              <li>AutoPay</li>
-              <li>Payment failure alerts</li>
-              <li>AI troubleshooting</li>
-              <li>Automated notices</li>
+          <div class="rounded-2xl bg-gradient-to-br from-white via-teal-50/30 to-cyan-50/30 backdrop-blur-sm border border-teal-200/50 shadow-lg p-6 mb-6">
+            <h3 class="text-xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent mb-4">Loan Servicing</h3>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start"><span class="text-teal-500 mr-2">▸</span>AutoPay</li>
+              <li class="flex items-start"><span class="text-teal-500 mr-2">▸</span>Payment failure alerts</li>
+              <li class="flex items-start"><span class="text-teal-500 mr-2">▸</span>AI troubleshooting</li>
+              <li class="flex items-start"><span class="text-teal-500 mr-2">▸</span>Automated notices</li>
             </ul>
           </div>
-          <div class="bg-white rounded-lg shadow-md p-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-4">Portfolio Management</h3>
-            <ul class="list-disc list-inside text-gray-600">
-              <li>General ledger accounting</li>
-              <li>Custom reporting</li>
-              <li>Trend visualization</li>
-              <li>Funding forecasting</li>
-              <li>Equipment resale management</li>
-              <li>Deficiency tracking</li>
+          <div class="rounded-2xl bg-gradient-to-br from-white via-cyan-50/30 to-sky-50/30 backdrop-blur-sm border border-cyan-200/50 shadow-lg p-6">
+            <h3 class="text-xl font-bold bg-gradient-to-r from-cyan-600 to-sky-600 bg-clip-text text-transparent mb-4">Portfolio Management</h3>
+            <ul class="space-y-2 text-slate-600">
+              <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>General ledger accounting</li>
+              <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Custom reporting</li>
+              <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Trend visualization</li>
+              <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Funding forecasting</li>
+              <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Equipment resale management</li>
+              <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Deficiency tracking</li>
             </ul>
           </div>
         </div>
@@ -203,47 +203,56 @@ import FlexLogo from '../components/FlexLogo.astro';
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="pt-8 mb-8 scroll-mt-40">
-      <h2 class="text-2xl font-semibold text-gray-800 mb-6">Client Testimonials</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <section id="testimonials" class="pt-8 mb-16 scroll-mt-40">
+      <h2 class="text-4xl font-bold text-center bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-12">Client Testimonials</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Mark Capital Finance Testimonial -->
-        <div class="bg-white rounded-lg shadow-md p-6">
-          <div class="h-16 w-32 rounded mb-4 p-1 flex items-center justify-center drop-shadow">
-            <Image src={markCapitalLogo} alt="Mark Capital Finance"/>
+        <div class="group relative rounded-2xl bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/30 backdrop-blur-sm border border-blue-200/50 p-8 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 overflow-hidden">
+          <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl"></div>
+          <div class="relative">
+            <div class="h-16 w-32 rounded mb-6 p-1 flex items-center justify-center">
+              <Image src={markCapitalLogo} alt="Mark Capital Finance"/>
+            </div>
+            <p class="text-slate-600 italic mb-6 leading-relaxed">"FLEX has enabled us to scale to a 20MM loan portfolio with only three people. We joke that our day-to-day work is letting FLEX "boss us around": FLEX alerts us of any issues that need attention while guiding us through complex workflows minimizing our opportunities to make mistakes."</p>
+            <div class="text-slate-800 font-bold">Mark Capital Finance, LLC</div>
           </div>
-          <p class="text-gray-600 italic mb-4">"FLEX has enabled us to scale to a 20MM loan portfolio with only three people. We joke that our day-to-day work is letting FLEX "boss us around": FLEX alerts us of any issues that need attention while guiding us through complex workflows minimizing our opportunities to make mistakes."</p>
-          <div class="text-gray-800 font-semibold">Mark Capital Finance, LLC</div>
         </div>
 
         <!-- West One Finance Testimonial -->
-        <div class="bg-white rounded-lg shadow-md p-6">
-          <div class="h-16 w-32 rounded mb-4 p-1 flex items-center justify-center drop-shadow">
-            <Image src={westOneLogo} alt="West One Finance"/>
+        <div class="group relative rounded-2xl bg-gradient-to-br from-white via-cyan-50/30 to-teal-50/30 backdrop-blur-sm border border-cyan-200/50 p-8 shadow-xl hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-500 overflow-hidden">
+          <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-full blur-3xl"></div>
+          <div class="relative">
+            <div class="h-16 w-32 rounded mb-6 p-1 flex items-center justify-center">
+              <Image src={westOneLogo} alt="West One Finance"/>
+            </div>
+            <p class="text-slate-600 italic mb-6 leading-relaxed">"FLEX is the premier end to end software program for the Equipment Finance industry, it is intuitive, and very user friendly. Mark is very knowledgeable in the finance industry, and you can see that reflected in every aspect of the program. FLEX is always evolving and improving to help us do our job faster and more efficiently. Mark provides excellent customer service and we are so grateful for this amazing software program."</p>
+            <div class="text-slate-800 font-bold">West One Finance, LLC</div>
           </div>
-          <p class="text-gray-600 italic mb-4">"FLEX is the premier end to end software program for the Equipment Finance industry, it is intuitive, and very user friendly. Mark is very knowledgeable in the finance industry, and you can see that reflected in every aspect of the program. FLEX is always evolving and improving to help us do our job faster and more efficiently. Mark provides excellent customer service and we are so grateful for this amazing software program."</p>
-          <div class="text-gray-800 font-semibold">West One Finance, LLC</div>
         </div>
 
         <!-- Timberline Finance Testimonial -->
-        <div class="bg-white rounded-lg shadow-md p-6">
-          <div class="h-16 w-32 rounded mb-4 p-1 flex items-center justify-center drop-shadow">
-            <Image src={timberlineLogo} alt="Timberline Finance"/>
+        <div class="group relative rounded-2xl bg-gradient-to-br from-white via-teal-50/30 to-emerald-50/30 backdrop-blur-sm border border-teal-200/50 p-8 shadow-xl hover:shadow-2xl hover:shadow-teal-500/20 transition-all duration-500 overflow-hidden">
+          <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-teal-500/10 to-emerald-500/10 rounded-full blur-3xl"></div>
+          <div class="relative">
+            <div class="h-16 w-32 rounded mb-6 p-1 flex items-center justify-center">
+              <Image src={timberlineLogo} alt="Timberline Finance"/>
+            </div>
+            <p class="text-slate-600 italic mb-6 leading-relaxed">"The efficiency of FLEX and ease of leveraging its features is incredible. Each user gains the advantage of comprehensive portfolio management which would ordinarily take several roles or systems to accomplish."</p>
+            <div class="text-slate-800 font-bold">Timberline Equipment Finance, LLC</div>
           </div>
-          <p class="text-gray-600 italic mb-4">"The efficiency of FLEX and ease of leveraging its features is incredible. Each user gains the advantage of comprehensive portfolio management which would ordinarily take several roles or systems to accomplish."</p>
-          <div class="text-gray-800 font-semibold">Timberline Equipment Finance, LLC</div>
         </div>
       </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="pt-8 mb-8 scroll-mt-40">
-      <h2 class="text-2xl font-semibold text-gray-800 mb-6">Pricing</h2>
-      <div class="bg-white rounded-lg shadow-md p-6">
-        <p class="text-gray-600 mb-4">
+    <section id="pricing" class="pt-8 mb-16 scroll-mt-40">
+      <h2 class="text-4xl font-bold text-center bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-12">Pricing</h2>
+      <div class="rounded-3xl bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 border border-blue-200/50 shadow-2xl shadow-blue-500/20 p-12 text-center">
+        <p class="text-xl text-slate-700 mb-6 leading-relaxed">
           Our pricing scales with your loan portfolio, ensuring affordability from startup to enterprise.
         </p>
-        <p class="text-gray-600">
-          <Link href="mailto:info@schaake.solutions?subject=FLEX%20Equipment%20Finance">Contact us</Link> for detailed pricing information tailored to your business needs.
+        <p class="text-xl text-slate-700 mb-8 leading-relaxed">
+          <Link href="mailto:info@schaake.solutions?subject=FLEX%20Equipment%20Finance" class="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-lg rounded-xl font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105">Contact us</Link> for detailed pricing information tailored to your business needs.
         </p>
       </div>
     </section>
