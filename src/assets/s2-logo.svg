@@ -1,14 +1,7 @@
----
-interface Props {
-	heightClass: string;
-}
-
-const { heightClass } = Astro.props;
-const classes = "drop-shadow ml-2 " + heightClass;
----
-
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0.00 0.00 240.00 177.00" class={classes} style="width: auto; max-height: 4rem;" aria-label="Schaake Solutions Logo">
-<path class="fill-cyan-600" d="
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0.00 0.00 240.00 177.00">
+<path fill="#0891b2" d="
   M 117.64 0.00
   L 118.45 0.25
   A 0.68 0.68 0.0 0 1 118.93 0.90
@@ -49,7 +42,7 @@ const classes = "drop-shadow ml-2 " + heightClass;
   L 117.64 0.00
   Z"
 />
-<path class="fill-slate-600" d="
+<path fill="#475569" d="
   M 182.49 0.00
   C 187.46 0.41 193.15 0.45 197.47 1.15
   C 221.37 4.98 236.96 24.22 240.00 47.70
