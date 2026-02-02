@@ -1,90 +1,172 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import FlexLogo from '../components/FlexLogo.astro';
 import { Image } from 'astro:assets';
 import landingBackground from '../assets/landing-page-background.webp';
 ---
 
-<Layout title="Schaake Solutions">
+<Layout title="Schaake Solutions - Strategic Technology Leadership & AI Consulting">
   <div class="space-y-16">
-    <div class="relative w-full h-[500px] mb-16 rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/20">
+    <!-- Hero Section -->
+    <div class="relative w-full h-[500px] mb-16 rounded-2xl overflow-hidden shadow-2xl shadow-slate-900/50">
       <Image
         src={landingBackground}
         alt="Landing page background"
         class="object-cover w-full h-full"
       />
-      <div class="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-sky-900/70 to-cyan-900/80 flex items-center justify-center">
+      <div class="absolute inset-0 bg-slate-950/80 flex items-center justify-center">
         <div class="text-center px-4 animate-fade-in">
-          <h1 class="text-5xl md:text-7xl text-white font-bold mb-6 drop-shadow-2xl">
-            AI-First Software Solutions
+          <h1 class="text-4xl md:text-6xl text-white font-bold mb-6">
+            Strategic Technology Leadership & AI Consulting
           </h1>
-          <p class="text-xl md:text-2xl text-blue-100 font-light max-w-3xl mx-auto">
-            Building tomorrow's intelligent software today
+          <p class="text-xl md:text-2xl text-slate-300 font-light max-w-3xl mx-auto mb-8">
+            Helping B2B companies leverage AI, modernize their technology stack, and accelerate product development
           </p>
+          <a href="#contact" class="inline-block px-8 py-3 bg-cyan-600 hover:bg-cyan-500 text-white text-lg rounded-xl font-semibold transition-all duration-200 hover:scale-[1.02]">
+            Let's Talk
+          </a>
         </div>
       </div>
     </div>
 
-    <section class="p-8 rounded-3xl bg-gradient-to-br from-white/80 to-blue-50/50 backdrop-blur-sm border border-white/20 shadow-xl">
-      <div class="flex flex-col md:flex-row gap-8 items-start">
-        <div class="w-full md:w-1/4">
-          <h2 class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Our Mission</h2>
+    <!-- Services Section -->
+    <section id="services" class="pt-8 mb-16 scroll-mt-24">
+      <h2 class="text-4xl font-bold text-center bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent mb-12">Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="group rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 p-8 transition-all duration-200 hover:scale-[1.01]">
+          <h3 class="text-2xl font-bold text-cyan-400 mb-4">Fractional CTO Services</h3>
+          <p class="text-slate-300 mb-6 leading-relaxed">
+            Get experienced technical leadership without the full-time commitment. I provide strategic technology direction, team guidance, and critical decision-making support to accelerate your product development.
+          </p>
+          <ul class="space-y-2 text-slate-300">
+            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Technical strategy and roadmap development</li>
+            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Architecture design and review</li>
+            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Team building and mentorship</li>
+            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Technology stack selection and evaluation</li>
+          </ul>
         </div>
-        <div class="w-full md:w-3/4">
-	      <p class="text-lg text-slate-700 leading-relaxed">
-          Schaake Solutions delivers AI-first software platforms and technical leadership for growing businesses. We create state-of-the-art SaaS solutions and provide strategic consulting and CTO services to help companies leverage AI, modernize their technology stack, and accelerate product development.
+
+        <div class="group rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 p-8 transition-all duration-200 hover:scale-[1.01]">
+          <h3 class="text-2xl font-bold text-cyan-400 mb-4">Founder CTO</h3>
+          <p class="text-slate-300 mb-6 leading-relaxed">
+            Available for true founder CTO roles with the right team and vision. Bring deep technical expertise, startup experience, and leadership to help build your company from the ground up.
+          </p>
+          <ul class="space-y-2 text-slate-300">
+            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Full technical leadership and ownership</li>
+            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Product and engineering team building</li>
+            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Hands-on development and architecture</li>
+            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Strategic partnership and equity alignment</li>
+          </ul>
+        </div>
+
+        <div class="group rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 p-8 transition-all duration-200 hover:scale-[1.01]">
+          <h3 class="text-2xl font-bold text-cyan-400 mb-4">AI Integration & Strategy</h3>
+          <p class="text-slate-300 mb-6 leading-relaxed">
+            Expert guidance on incorporating AI into your software products and development processes. I help you leverage cutting-edge AI technologies to create competitive advantages and innovative solutions.
+          </p>
+          <ul class="space-y-2 text-slate-300">
+            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>AI-first development methodologies</li>
+            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>AI product feature integration</li>
+            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>LLM and generative AI implementation</li>
+            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>AI use case identification and prioritization</li>
+          </ul>
+        </div>
+
+        <div class="group rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 p-8 transition-all duration-200 hover:scale-[1.01]">
+          <h3 class="text-2xl font-bold text-cyan-400 mb-4">Technical Consulting</h3>
+          <p class="text-slate-300 mb-6 leading-relaxed">
+            Comprehensive technology consulting to help you make critical technical decisions, modernize your stack, and implement best practices across your engineering organization.
+          </p>
+          <ul class="space-y-2 text-slate-300">
+            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>System architecture design and review</li>
+            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Code reviews and quality improvements</li>
+            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>DevOps and infrastructure optimization</li>
+            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Performance and scalability planning</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section id="approach" class="pt-8 mb-16 scroll-mt-24">
+      <h2 class="text-4xl font-bold text-center bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent mb-12">My Approach</h2>
+      <div class="rounded-3xl bg-slate-900 border border-slate-800 p-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div class="text-center group">
+            <div class="w-20 h-20 bg-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-200">
+              <span class="text-white text-3xl font-bold">1</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-100 mb-4">Assess</h3>
+            <p class="text-slate-300 leading-relaxed">
+              I analyze your current processes, data infrastructure, and business objectives to identify high-impact opportunities.
+            </p>
+          </div>
+
+          <div class="text-center group">
+            <div class="w-20 h-20 bg-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-200">
+              <span class="text-white text-3xl font-bold">2</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-100 mb-4">Design</h3>
+            <p class="text-slate-300 leading-relaxed">
+              I create tailored solutions that align with your specific needs, ensuring practical and achievable implementations.
+            </p>
+          </div>
+
+          <div class="text-center group">
+            <div class="w-20 h-20 bg-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-200">
+              <span class="text-white text-3xl font-bold">3</span>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-100 mb-4">Implement</h3>
+            <p class="text-slate-300 leading-relaxed">
+              I deploy solutions with minimal disruption, provide comprehensive support, and ensure successful adoption across your organization.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Track Record Section -->
+    <section id="track-record" class="pt-8 mb-16 scroll-mt-24">
+      <h2 class="text-4xl font-bold text-center bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent mb-12">Track Record</h2>
+      <div class="rounded-3xl bg-slate-900 border border-slate-800 p-10">
+        <div class="max-w-3xl mx-auto">
+          <p class="text-lg text-slate-300 leading-relaxed mb-6">
+            I've built and operated production software systems that deliver real business value. Most recently, I created <strong class="text-slate-100">FLEX</strong>, an AI-powered equipment finance platform that streamlines the entire B2B financing lifecycle from origination to servicing.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
+              <p class="text-slate-300">AI-assisted underwriting and credit decisioning</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
+              <p class="text-slate-300">Integration with DocuSign, PayNet, Equifax, LexisNexis</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
+              <p class="text-slate-300">Full loan lifecycle management and servicing</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
+              <p class="text-slate-300">Modern cloud architecture on AWS and Supabase</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="pt-8 mb-16 scroll-mt-24">
+      <h2 class="text-4xl font-bold text-center bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent mb-12">Get Started</h2>
+      <div class="rounded-3xl bg-slate-900 border border-slate-800 p-12 text-center">
+        <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+          Ready to accelerate your technology vision? Let's discuss how I can help you make critical technical decisions, leverage AI, and build innovative software solutions.
         </p>
-      </div>
-      </div>
-    </section>
-
-    <section class="p-8">
-      <div class="mb-8">
-        <h2 class="text-4xl font-bold text-center bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4">Our SaaS Platforms</h2>
-      </div>
-      <div class="flex justify-center">
-        <a href="flex-equipment-finance" class="group block w-full max-w-3xl">
-          <div class="relative rounded-2xl bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/30 backdrop-blur-sm border border-blue-200/50 p-8 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-200 overflow-hidden hover:scale-[1.01]">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl"></div>
-            <div class="relative">
-              <div class="flex items-center gap-3 mb-4">
-                <FlexLogo heightClass="h-10"/>
-                <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">FLEX Equipment Finance</h3>
-              </div>
-              <p class="text-slate-600 leading-relaxed text-lg">
-                A comprehensive SaaS platform that streamlines the entire equipment financing lifecycle, from loan origination to servicing. The platform combines powerful integrations, AI-assisted underwriting, and robust portfolio management tools to modernize B2B equipment financing operations.
-              </p>
-              <div class="mt-6 inline-flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform duration-200">
-                Learn more <span class="ml-2">→</span>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section class="p-8">
-      <div class="mb-8">
-        <h2 class="text-4xl font-bold text-center bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4">Consulting & CTO Services</h2>
-      </div>
-      <div class="flex justify-center">
-        <a href="services" class="group block w-full max-w-3xl">
-          <div class="relative rounded-2xl bg-gradient-to-br from-white via-sky-50/30 to-blue-50/30 backdrop-blur-sm border border-sky-200/50 p-8 shadow-xl hover:shadow-2xl hover:shadow-sky-500/20 transition-all duration-200 overflow-hidden hover:scale-[1.01]">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-sky-500/10 to-blue-500/10 rounded-full blur-3xl"></div>
-            <div class="relative">
-              <h3 class="text-2xl font-bold bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent mb-4">Consulting Services & Fractional CTO</h3>
-              <p class="text-slate-600 leading-relaxed text-lg">
-                Strategic technology consulting to help your business leverage AI and modern software development practices. We provide expert guidance on incorporating AI into your software products, AI-first development methodologies, fractional CTO services, and are available for true founder CTO roles to help you make critical technical decisions and accelerate your product development.
-              </p>
-              <div class="mt-6 inline-flex items-center text-sky-600 font-semibold group-hover:translate-x-2 transition-transform duration-200">
-                Learn more <span class="ml-2">→</span>
-              </div>
-            </div>
-          </div>
-        </a>
+        <div class="text-center">
+          <a href="mailto:info@schaake.solutions?subject=Consulting%20Inquiry" class="inline-block px-10 py-4 bg-cyan-600 hover:bg-cyan-500 text-white text-lg rounded-xl font-semibold transition-all duration-200 hover:scale-[1.02]">
+            Schedule a Consultation
+          </a>
+        </div>
       </div>
     </section>
   </div>
 </Layout>
-
