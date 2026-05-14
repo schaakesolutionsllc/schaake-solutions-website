@@ -1,0 +1,51 @@
+name: revise-schaake-solutions-homepage-messaging-and-replace-track-record
+description: Revise the Schaake Solutions homepage messaging, replace the
+  FLEX-centered Track Record section with an Experience That Transfers
+  credibility section, and update navigation/footer/meta copy for consistency.
+base_branch: master
+mode: excursion
+validate:
+  - pnpm install --frozen-lockfile
+  - pnpm build
+plans:
+  - id: plan-01-homepage-messaging
+    name: Homepage Messaging and Experience Section Refresh
+    depends_on: []
+    branch: revise-schaake-solutions-homepage-messaging-and-replace-track-record/plan-01-homepage-messaging
+    build:
+      - implement
+      - test-cycle
+      - review-cycle
+    review:
+      strategy: auto
+      perspectives:
+        - code
+        - docs
+        - verify
+      maxRounds: 1
+      evaluatorStrictness: standard
+pipeline:
+  scope: excursion
+  compile:
+    - planner
+  defaultBuild:
+    - implement
+    - review-cycle
+    - validate
+  defaultReview:
+    strategy: auto
+    perspectives:
+      - code
+      - docs
+      - verify
+    maxRounds: 2
+    evaluatorStrictness: standard
+  rationale: This is a cohesive homepage messaging and structure update touching a
+    small number of Astro files, so excursion fits better than expedition. A
+    single planner can enumerate the required hero, services,
+    credibility-section, navigation, footer, and metadata edits. The build
+    pipeline uses implementation followed by an iterative review cycle to catch
+    copy consistency, anchor/link issues, and unintended markup/style
+    regressions, then validate to run the requested build check after fixes. No
+    doc-author, doc-sync, test-write, or test-cycle stages are needed because
+    the PRD does not add documentation, APIs, or complex logic.
