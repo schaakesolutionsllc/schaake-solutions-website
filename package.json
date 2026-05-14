@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "schaake-solutions-website",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "aws s3 cp dist/ s3://www.schaake.solutions/ --recursive && aws amplify start-deployment --app-id d1f8qse7tbf76h --branch-name staging --source-url s3://www.schaake.solutions/ --source-url-type BUCKET_PREFIX",
+    "deploy": "vercel --prod",
+    "deploy:aws": "aws s3 cp dist/ s3://www.schaake.solutions/ --recursive && aws amplify start-deployment --app-id d1f8qse7tbf76h --branch-name staging --source-url s3://www.schaake.solutions/ --source-url-type BUCKET_PREFIX",
     "astro": "astro"
   },
   "dependencies": {
