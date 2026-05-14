@@ -59,9 +59,11 @@ test('current work mentions eforge as open source work in first person', () => {
   assert.match(page, /eforge/);
   assert.match(page, /open source agentic build system/);
   assert.match(page, /build, review, validation, and merge loop/);
+  assert.match(page, /scale from small one-off projects to large, mature codebases/);
+  assert.match(page, /reliability, traceability, and engineering discipline/);
   assert.match(page, /https:\/\/eforge\.build/);
   assert.match(page, /https:\/\/github\.com\/eforge-build\/eforge/);
-  assert.doesNotMatch(page, /AI-assisted|We also maintain|we also maintain|our own software delivery/);
+  assert.doesNotMatch(page, /AI-assisted|disposability|disposable|We also maintain|we also maintain|our own software delivery/);
 });
 
 test('external Calendly and LinkedIn links remain available', () => {
