@@ -1,0 +1,44 @@
+---
+// Decorative diagram for the hero: one system at the centre, with portals,
+// payments and workflows around it. The text labels are hidden below lg,
+// where they would render under 11px; the aria-label carries them.
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<svg
+  class={className}
+  viewBox="-50 -30 400 350"
+  role="img"
+  aria-label="One system at the centre, with portals, payments and workflows around it"
+>
+  <g fill="none" class="stroke-ink" stroke-width="1">
+    <circle cx="150" cy="150" r="138" />
+    <circle cx="150" cy="150" r="96" stroke-dasharray="2 5" />
+    <circle cx="150" cy="150" r="52" class="fill-ink" />
+  </g>
+  <g class="fill-logo-cyan">
+    <circle cx="150" cy="12" r="7" />
+    <circle cx="269.5" cy="219" r="7" />
+    <circle cx="30.5" cy="219" r="7" />
+  </g>
+  <g class="fill-ink">
+    <circle cx="150" cy="54" r="5" />
+    <circle cx="233" cy="198" r="5" />
+    <circle cx="67" cy="198" r="5" />
+  </g>
+  <g class="max-lg:hidden font-mono" font-size="17" letter-spacing="1" text-anchor="middle">
+    <g class="fill-paper">
+      <text x="150" y="146">ONE</text>
+      <text x="150" y="168">SYSTEM</text>
+    </g>
+    <g class="fill-ink-2">
+      <text x="150" y="-10">PORTALS</text>
+      <text x="290" y="272">PAYMENTS</text>
+      <text x="10" y="272">WORKFLOWS</text>
+    </g>
+  </g>
+</svg>

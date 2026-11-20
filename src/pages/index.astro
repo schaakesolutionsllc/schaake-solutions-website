@@ -1,124 +1,119 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import landingBackground from '../assets/landing-page-background.webp';
+import Orbit from '../components/Orbit.astro';
+import SystemEntry from '../components/SystemEntry.astro';
 ---
 
 <Layout title="Schaake Solutions - Business Operating Systems, Built AI-First">
-  <div class="space-y-16">
-    <!-- Hero Section -->
-    <div class="relative w-full h-[500px] mb-16 rounded-2xl overflow-hidden shadow-2xl shadow-slate-900/50">
-      <Image
-        src={landingBackground}
-        alt="Landing page background"
-        class="object-cover w-full h-full"
-      />
-      <div class="absolute inset-0 bg-slate-950/80 flex items-center justify-center">
-        <div class="text-center px-4 animate-fade-in">
-          <h1 class="text-4xl md:text-5xl text-white font-bold mb-4">
-            Hi, I'm Mark Schaake.
-          </h1>
-          <p class="text-xl md:text-2xl text-cyan-400 font-medium max-w-3xl mx-auto mb-4">
-            I build business operating systems, AI-first.
-          </p>
-          <p class="text-lg md:text-xl text-slate-300 font-light max-w-3xl mx-auto mb-8">
-            One system a business runs on: portals for everyone involved, the money flowing through it, and the day-to-day processes. Right now I'm working on projects for fun, and I'm happy to help when someone needs a system like that.
-          </p>
-          <div class="flex items-center justify-center gap-4">
-            <a href="mailto:info@schaake.solutions" class="inline-block px-8 py-3 bg-cyan-600 hover:bg-cyan-500 text-white text-lg rounded-xl font-semibold transition-all duration-200 hover:scale-[1.02]">
-              Get in Touch
-            </a>
-            <a href="https://markschaake.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 border border-slate-600 hover:border-slate-500 text-slate-300 hover:text-white text-lg rounded-xl font-medium transition-all duration-200 hover:scale-[1.02]">
-              Writing
-            </a>
-          </div>
+  <div class="mx-auto max-w-page px-5 md:px-10">
+    <!-- Hero -->
+    <div class="grid gap-10 border-b border-ink pt-11 pb-14 md:grid-cols-[1.25fr_0.75fr] md:gap-14 md:pt-18 md:pb-20">
+      <div>
+        <p class="mb-4.5 font-serif text-xl leading-[1.3] italic md:text-2xl">Hi, I'm Mark Schaake.</p>
+        <h1 class="mb-8 font-serif text-display font-medium text-ink">I build business operating systems, <em class="whitespace-nowrap text-accent">AI-first.</em></h1>
+        <p class="mb-9 max-w-[36rem] text-body md:text-sub">
+          One system a business runs on: portals for everyone involved, the money flowing through it, and the day-to-day processes. Right now I'm working on projects for fun, and I'm happy to help when someone needs a system like that.
+        </p>
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+          <a href="mailto:info@schaake.solutions" class="inline-flex items-center gap-2.5 rounded-full bg-ink px-6 py-3.5 font-semibold text-paper transition-colors hover:bg-accent">
+            Get in Touch <span aria-hidden="true">→</span>
+          </a>
+          <a href="https://markschaake.com" class="border-b-[1.5px] border-accent pb-0.5 font-semibold text-ink transition-colors hover:text-accent">Writing</a>
         </div>
+      </div>
+      <div class="flex items-center justify-center border-t border-rule pt-7 md:justify-start md:border-t-0 md:border-l md:pt-0 md:pl-8">
+        <Orbit class="h-auto w-[140px] md:w-full md:max-w-[300px]" />
       </div>
     </div>
 
-    <!-- What I Build Section -->
-    <section id="build" class="pt-8 mb-16 scroll-mt-24">
-      <h2 class="text-4xl font-bold text-center bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent mb-12">What I Build</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="group rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 p-8 transition-all duration-200 hover:scale-[1.01]">
-          <h3 class="text-2xl font-bold text-cyan-400 mb-4">Portals for Every Stakeholder</h3>
-          <p class="text-slate-300 mb-6 leading-relaxed">
-            Everyone who touches the business gets their own view of the same system, whether they're staff, customers, partners, or members. Each person sees what they need and can act on it themselves.
-          </p>
-          <ul class="space-y-2 text-slate-300">
-            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Role-based portals on one shared data model</li>
-            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Self-service for customers and members</li>
-            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Back-office tools for the people running things</li>
-            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Notifications and documents in one place</li>
-          </ul>
-        </div>
-
-        <div class="group rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 p-8 transition-all duration-200 hover:scale-[1.01]">
-          <h3 class="text-2xl font-bold text-cyan-400 mb-4">Payments & Money Flows</h3>
-          <p class="text-slate-300 mb-6 leading-relaxed">
-            Money moving in and out is where business software has to be right. I build the billing and payment flows into the same system, so payments, balances, and records stay in step.
-          </p>
-          <ul class="space-y-2 text-slate-300">
-            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Billing, invoices, and recurring payments</li>
-            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Card and bank (ACH) payments</li>
-            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Ledgers, balances, and reconciliation</li>
-            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Alerts when a payment fails</li>
-          </ul>
-        </div>
-
-        <div class="group rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 p-8 transition-all duration-200 hover:scale-[1.01]">
-          <h3 class="text-2xl font-bold text-cyan-400 mb-4">Workflows, Built AI-First</h3>
-          <p class="text-slate-300 mb-6 leading-relaxed">
-            I design the business processes and the AI together from the start, so AI does real work inside day-to-day operations instead of sitting off to the side.
-          </p>
-          <ul class="space-y-2 text-slate-300">
-            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Business processes as clear, auditable workflows</li>
-            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>AI that drafts, reviews, and surfaces context</li>
-            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>Automation for repetitive back-office work</li>
-            <li class="flex items-start"><span class="text-cyan-500 mr-2">▸</span>People in the loop where judgment matters</li>
-          </ul>
-        </div>
+    <!-- What I Build -->
+    <section id="build" class="scroll-mt-6 border-b border-ink py-16 md:py-22">
+      <div class="mb-8 flex flex-col gap-2 md:mb-12 md:flex-row md:items-baseline md:gap-5">
+        <span class="font-mono text-label text-accent uppercase">§ 1</span>
+        <h2 class="font-serif text-h2 font-medium text-ink">What I Build</h2>
       </div>
-    </section>
+      <div class="grid border-t border-rule lg:grid-cols-3">
 
-    <!-- Systems Section -->
-    <section id="systems" class="pt-8 mb-16 scroll-mt-24">
-      <h2 class="text-4xl font-bold text-center bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent mb-12">Systems in Production</h2>
-      <div class="rounded-3xl bg-slate-900 border border-slate-800 p-10">
-        <div class="max-w-4xl mx-auto">
-          <p class="text-lg text-slate-300 leading-relaxed mb-8">
-            Two systems I've built and still look after. Both are the kind of software I enjoy most: one place where a whole operation runs.
-          </p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="rounded-2xl bg-slate-950/40 border border-slate-800 p-6">
-              <h3 class="text-xl font-bold text-cyan-400 mb-3">An operating system for equipment finance lenders</h3>
-              <p class="text-slate-300 leading-relaxed">The platform from my previous business: one system that equipment finance lenders run their lending on, from new deals through servicing, with portals for the people involved. I built it over roughly a decade and still maintain it as a software service.</p>
-            </div>
-            <div class="rounded-2xl bg-slate-950/40 border border-slate-800 p-6">
-              <h3 class="text-xl font-bold text-cyan-400 mb-3">An operating system for my tennis club</h3>
-              <p class="text-slate-300 leading-relaxed">Pro bono software for running my tennis club, with portals for everyone involved, members included. It launched in fall 2026, and I'm still maintaining it and adding to it.</p>
-            </div>
+          <div class="border-b border-rule py-7 last:border-b-0 lg:border-b-0 lg:pt-8 lg:pb-2 lg:pr-8 lg:border-r">
+            <span class="mb-7 block font-mono text-label text-ink-3 uppercase">1.1</span>
+            <svg class="mb-5 block size-14" viewBox="0 0 56 56" fill="none" stroke-width="1.3" aria-hidden="true"><g class="stroke-ink"><rect x="4" y="4" width="12" height="12" /><rect x="40" y="4" width="12" height="12" /><rect x="4" y="40" width="12" height="12" /><rect x="40" y="40" width="12" height="12" /><path d="M16 16l4 4M40 16l-4 4M16 40l4-4M40 40l-4-4" /></g><rect x="20" y="20" width="16" height="16" class="fill-logo-cyan" /></svg>
+            <h3 class="mb-3.5 font-serif text-h3 font-semibold tracking-[-0.01em] text-ink">Portals for Every Stakeholder</h3>
+            <p class="mb-5">
+              Everyone who touches the business gets their own view of the same system, whether they're staff, customers, partners, or members. Each person sees what they need and can act on it themselves.
+            </p>
+            <ul class="text-[0.9375rem] leading-[1.55]">
+              <li class="border-t border-dashed border-rule py-2.5">Role-based portals on one shared data model</li>
+              <li class="border-t border-dashed border-rule py-2.5">Self-service for customers and members</li>
+              <li class="border-t border-dashed border-rule py-2.5">Back-office tools for the people running things</li>
+              <li class="border-t border-dashed border-rule py-2.5">Notifications and documents in one place</li>
+            </ul>
           </div>
-        </div>
+
+          <div class="border-b border-rule py-7 last:border-b-0 lg:border-b-0 lg:pt-8 lg:pb-2 lg:border-r lg:px-8">
+            <span class="mb-7 block font-mono text-label text-ink-3 uppercase">1.2</span>
+            <svg class="mb-5 block size-14" viewBox="0 0 56 56" fill="none" stroke-width="1.3" aria-hidden="true"><path class="stroke-ink" d="M6 18h36l-8-8M50 38H14l8 8" /><circle cx="28" cy="28" r="6" class="fill-logo-cyan" /></svg>
+            <h3 class="mb-3.5 font-serif text-h3 font-semibold tracking-[-0.01em] text-ink">Payments & Money Flows</h3>
+            <p class="mb-5">
+              Money moving in and out is where business software has to be right. I build the billing and payment flows into the same system, so payments, balances, and records stay in step.
+            </p>
+            <ul class="text-[0.9375rem] leading-[1.55]">
+              <li class="border-t border-dashed border-rule py-2.5">Billing, invoices, and recurring payments</li>
+              <li class="border-t border-dashed border-rule py-2.5">Card and bank (ACH) payments</li>
+              <li class="border-t border-dashed border-rule py-2.5">Ledgers, balances, and reconciliation</li>
+              <li class="border-t border-dashed border-rule py-2.5">Alerts when a payment fails</li>
+            </ul>
+          </div>
+
+          <div class="border-b border-rule py-7 last:border-b-0 lg:border-b-0 lg:pt-8 lg:pb-2 lg:pl-8">
+            <span class="mb-7 block font-mono text-label text-ink-3 uppercase">1.3</span>
+            <svg class="mb-5 block size-14" viewBox="0 0 56 56" fill="none" stroke-width="1.3" aria-hidden="true"><g class="stroke-ink"><circle cx="10" cy="28" r="5" /><circle cx="46" cy="12" r="5" /><circle cx="46" cy="44" r="5" /><path d="M15 28h10M25 28c6 0 6-16 16-16M25 28c6 0 6 16 16 16" /></g><rect x="22" y="23" width="10" height="10" class="fill-logo-cyan" transform="rotate(45 27 28)" /></svg>
+            <h3 class="mb-3.5 font-serif text-h3 font-semibold tracking-[-0.01em] text-ink">Workflows, Built AI-First</h3>
+            <p class="mb-5">
+              I design the business processes and the AI together from the start, so AI does real work inside day-to-day operations instead of sitting off to the side.
+            </p>
+            <ul class="text-[0.9375rem] leading-[1.55]">
+              <li class="border-t border-dashed border-rule py-2.5">Business processes as clear, auditable workflows</li>
+              <li class="border-t border-dashed border-rule py-2.5">AI that drafts, reviews, and surfaces context</li>
+              <li class="border-t border-dashed border-rule py-2.5">Automation for repetitive back-office work</li>
+              <li class="border-t border-dashed border-rule py-2.5">People in the loop where judgment matters</li>
+            </ul>
+          </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="pt-8 mb-16 scroll-mt-24">
-      <h2 class="text-4xl font-bold text-center bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent mb-12">Get in Touch</h2>
-      <div class="rounded-3xl bg-slate-900 border border-slate-800 p-12 text-center">
-        <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Have a system you need built, or want to compare notes? Send me an email.
-        </p>
-        <div class="text-center">
-          <a href="mailto:info@schaake.solutions" class="inline-block px-10 py-4 bg-cyan-600 hover:bg-cyan-500 text-white text-lg rounded-xl font-semibold transition-all duration-200 hover:scale-[1.02]">
-            info@schaake.solutions
-          </a>
-        </div>
-        <p class="mt-6 text-slate-400">
-          Prefer to talk? <a href="https://calendly.com/mark-schaake/30min" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:text-cyan-300 font-medium transition-colors duration-200">Book a 30-minute call</a>.
-        </p>
+    <!-- Systems in Production -->
+    <section id="systems" class="scroll-mt-6 border-b border-ink py-16 md:py-22">
+      <div class="mb-8 flex flex-col gap-2 md:mb-12 md:flex-row md:items-baseline md:gap-5">
+        <span class="font-mono text-label text-accent uppercase">§ 2</span>
+        <h2 class="font-serif text-h2 font-medium text-ink">Systems in Production</h2>
       </div>
+      <p class="mb-12 max-w-[46rem] font-serif text-lead text-ink">
+        Two of the systems I've built and still look after. Both are the kind of software I enjoy most: one place where a whole operation runs.
+      </p>
+      <SystemEntry number="No. 1" title="An operating system for equipment finance lenders">
+        The platform from my previous business: one system that equipment finance lenders run their lending on, from new deals through servicing, with portals for the people involved. I built it over roughly a decade and still maintain it as a software service.
+      </SystemEntry>
+      <SystemEntry number="No. 2" title="An operating system for my tennis club">
+        Pro bono software for running my tennis club, with portals for everyone involved, members included. It launched in fall 2026, and I'm still maintaining it and adding to it.
+      </SystemEntry>
+      <p class="border-t border-rule pt-8 text-ink-2">
+        I've also done consulting for AI House (formerly AI2 Incubator) and worked on a range of other projects.
+      </p>
+    </section>
+
+    <!-- Get in Touch -->
+    <section id="contact" class="-mx-5 mt-10 scroll-mt-6 bg-ink px-5 py-16 text-on-ink md:mx-0 md:mt-14 md:rounded md:px-14 md:py-20">
+      <div class="mb-8 flex flex-col gap-2 md:mb-12 md:flex-row md:items-baseline md:gap-5">
+        <span class="font-mono text-label text-accent-bright uppercase">§ 3</span>
+        <h2 class="font-serif text-h2 font-medium text-white">Get in Touch</h2>
+      </div>
+      <p class="mb-10 max-w-[40rem] font-serif text-lead-lg text-white">
+        Have a system you need built, or want to compare notes? Send me an email.
+      </p>
+      <a href="mailto:info@schaake.solutions" class="inline-block border-b-[3px] border-accent-bright font-bold break-words text-mail text-accent-bright transition-colors hover:border-white hover:text-white focus-visible:outline-accent-bright">info@schaake.solutions</a>
+      <p class="mt-7">
+        Prefer to talk? <a href="https://calendly.com/mark-schaake/30min" class="font-semibold text-white underline underline-offset-4 transition-colors hover:text-accent-bright focus-visible:outline-accent-bright">Book a 30-minute call</a>.
+      </p>
     </section>
   </div>
 </Layout>

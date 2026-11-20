@@ -33,6 +33,7 @@ Hosted on Vercel. Pushing =master= to =origin= deploys to production through Ver
 
 - =src/pages/index.astro=: the page
 - =src/layouts/Layout.astro=: header, navigation, footer, metadata
-- =src/components/=: small Astro components (logo, link)
-- =src/assets/=, =public/=: images and static files
+- =src/components/=: small Astro components (logo, hero diagram, system entry)
+- =src/styles/global.css=: Tailwind and the design tokens
+- =public/=: static files (favicon, touch icon, link-preview image)
 - =tests/=: copy tests

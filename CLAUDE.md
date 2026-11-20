@@ -4,13 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Marketing website for Schaake Solutions, LLC (www.schaake.solutions): a single static page presenting Mark Schaake's consulting services (fractional CTO and technical leadership, applied AI implementation, architecture and delivery consulting). It is built with Astro and Tailwind CSS and hosted on Vercel.
+Marketing website for Schaake Solutions, LLC (www.schaake.solutions): a single static page presenting Mark Schaake's work building business operating systems, AI-first (what he builds, the systems he has in production, and how to get in touch). It is built with Astro and Tailwind CSS and hosted on Vercel.
 
 ## Tech Stack
 
 - **Astro** 7.4 (static output, no adapter or integrations)
 - **Tailwind CSS** 4.3 via the `@tailwindcss/vite` plugin (configured in `astro.config.mjs`; no `tailwind.config` file, CSS entry is `src/styles/global.css`)
-- **sharp** 0.35 for `astro:assets` image optimization
+- **sharp** 0.35 for `astro:assets` image optimization (no images are processed at the moment)
 - **pnpm** (lockfile: `pnpm-lock.yaml`)
 - **Node** 22.23.4 or newer is required by Astro 7 (Vercel builds with Node 24.x)
 
@@ -28,20 +28,19 @@ There is no `pnpm test` script; run the tests with `node --test tests/`.
 
 ## Structure
 
-- `src/pages/index.astro`: the only page (hero, services, approach, experience, contact sections)
-- `src/layouts/Layout.astro`: HTML shell, metadata, sticky header with desktop and mobile navigation, footer
-- `src/components/`: `SchaakeSolutionsLogo.astro` (inline SVG logo), `Link.astro` (styled anchor)
-- `src/styles/global.css`: Tailwind import
-- `src/assets/`: images processed by `astro:assets` (only `landing-page-background.webp` is currently referenced)
-- `public/`: files served as-is (favicon)
+- `src/pages/index.astro`: the only page (hero, `#build`, `#systems`, `#contact` sections). The copy lives here, including the system descriptions passed to `SystemEntry` as slot content.
+- `src/layouts/Layout.astro`: HTML shell, metadata (canonical, Open Graph, Twitter card), skip link, header with one responsive `<nav aria-label="Main">`, masthead strip, footer
+- `src/components/`: `SchaakeSolutionsLogo.astro` (inline SVG logo), `Orbit.astro` (hero diagram, inline SVG), `SystemEntry.astro` (numbered entry in the Systems section)
+- `src/styles/global.css`: Tailwind import plus the design tokens in `@theme` (colours `paper`, `ink`, `ink-2`, `ink-3`, `rule`, `accent`, `accent-bright`, `on-ink`, `ok`, `logo-cyan`, `logo-slate`; system font stacks; the type scale) and base styles (focus ring, reduced-motion-aware smooth scrolling)
+- `public/`: files served as-is (`favicon.svg`, `apple-touch-icon.png`, `og.png` for link previews)
 - `tests/homepage-messaging.test.mjs`: copy tests
 - `dist/`: build output (gitignored)
 
-Navigation is in-page anchors (`/#services`, `/#approach`, `/#experience`, `/#contact`) with Tailwind's `scroll-smooth`; a small inline script toggles the mobile menu.
+Navigation is in-page anchors (`/#build`, `/#systems`, `/#contact`). The design is light only, with system fonts and no client-side JavaScript. Keep colour pairs to the AA-checked combinations: `accent-bright` and `on-ink` only on `ink`, and `rule`, `logo-cyan` and `logo-slate` never for text.
 
 ## Tests pin the homepage copy
 
-`tests/homepage-messaging.test.mjs` reads `src/pages/index.astro` and `src/layouts/Layout.astro` as text and asserts on the copy: the page title, hero phrases, the three service card headings, the experience section headings, the meta description, navigation and footer links, and the Calendly and LinkedIn URLs. It also asserts that certain retired copy is absent (e.g. "Track Record", "FLEX", "eforge"). Any intentional copy change must update these tests in the same change.
+`tests/homepage-messaging.test.mjs` reads `src/pages/index.astro` and `src/layouts/Layout.astro` as text and asserts on the copy: the page title, hero phrases, the three "What I Build" headings, the two system titles, the Systems intro and closing line, the meta description, the Open Graph and canonical metadata, navigation and footer links (with their counts), and the Calendly and LinkedIn URLs. It also asserts that certain retired copy and markup are absent (e.g. "Track Record", "FLEX", "eforge", "Client Portal", the old hero image, `hover:scale`). Any intentional copy change must update these tests in the same change.
 
 ## Deployment
 
