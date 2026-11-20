@@ -24,8 +24,6 @@ pnpm-debug.log*
 .idea/
 .aider*
 
-.eforge/
-
 # Claude Code local settings
 .claude/settings.local.json
 .vercel
