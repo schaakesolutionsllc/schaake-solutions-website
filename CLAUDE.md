@@ -30,7 +30,7 @@ There is no `pnpm test` script; run the tests with `node --test tests/`.
 
 - `src/pages/index.astro`: the only page (hero, services, approach, experience, contact sections)
 - `src/layouts/Layout.astro`: HTML shell, metadata, sticky header with desktop and mobile navigation, footer
-- `src/components/`: `SchaakeSolutionsLogo.astro` (inline SVG logo), `Link.astro` (styled anchor), `Card.astro` (currently unused)
+- `src/components/`: `SchaakeSolutionsLogo.astro` (inline SVG logo), `Link.astro` (styled anchor)
 - `src/styles/global.css`: Tailwind import
 - `src/assets/`: images processed by `astro:assets` (only `landing-page-background.webp` is currently referenced)
 - `public/`: files served as-is (favicon)
