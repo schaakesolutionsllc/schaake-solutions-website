@@ -4,47 +4,47 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the marketing website for Schaake Solutions, LLC, built with Astro and deployed to AWS S3/Amplify. The site showcases two SaaS finance products:
-- FLEX Equipment Finance (FLEX EF) - Currently available
-- FLEX Insurance Premium Finance (FLEX IPF) - Planned for 2025
+Marketing website for Schaake Solutions, LLC (www.schaake.solutions): a single static page presenting Mark Schaake's consulting services (fractional CTO and technical leadership, applied AI implementation, architecture and delivery consulting). It is built with Astro and Tailwind CSS and hosted on Vercel.
 
-## Development Commands
+## Tech Stack
+
+- **Astro** 7.4 (static output, no adapter or integrations)
+- **Tailwind CSS** 4.3 via the `@tailwindcss/vite` plugin (configured in `astro.config.mjs`; no `tailwind.config` file, CSS entry is `src/styles/global.css`)
+- **sharp** 0.35 for `astro:assets` image optimization
+- **pnpm** (lockfile: `pnpm-lock.yaml`)
+- **Node** 22.23.4 or newer is required by Astro 7 (Vercel builds with Node 24.x)
+
+## Commands
 
 ```bash
-# Start development server
-npm run dev
-
-# Build for production (outputs to dist/)
-npm run build
-
-# Preview production build locally
-npm run preview
-
-# Deploy to AWS S3 and trigger Amplify deployment
-npm run deploy
+pnpm install          # install dependencies
+pnpm dev              # dev server at http://localhost:4321
+pnpm build            # production build to dist/
+pnpm preview          # serve the built dist/ locally
+node --test tests/    # run the tests (Node's built-in test runner)
 ```
 
-## Architecture
+There is no `pnpm test` script; run the tests with `node --test tests/`.
 
-### Tech Stack
-- **Astro** (4.16.13) - Static site generator with component-based architecture
-- **Tailwind CSS** (3.4.15) - Utility-first CSS framework
-- **TypeScript** - Basic type safety configuration
-- **AWS S3 + Amplify** - Hosting and deployment
+## Structure
 
-### Project Structure
-- `/src/pages/` - Page components (routes)
-  - `index.astro` - Homepage
-  - `flex-equipment-finance.astro` - FLEX EF product page
-  - `flex-premium-finance.astro` - FLEX IPF product page
-- `/src/components/` - Reusable Astro components
-- `/src/layouts/` - Page layout templates
-- `/src/assets/` - Images and static assets
-- `/public/` - Static files served directly
-- `/dist/` - Build output (gitignored)
+- `src/pages/index.astro`: the only page (hero, services, approach, experience, contact sections)
+- `src/layouts/Layout.astro`: HTML shell, metadata, sticky header with desktop and mobile navigation, footer
+- `src/components/`: `SchaakeSolutionsLogo.astro` (inline SVG logo), `Link.astro` (styled anchor), `Card.astro` (currently unused)
+- `src/styles/global.css`: Tailwind import
+- `src/assets/`: images processed by `astro:assets` (only `landing-page-background.webp` is currently referenced)
+- `public/`: files served as-is (favicon)
+- `tests/homepage-messaging.test.mjs`: copy tests
+- `dist/`: build output (gitignored)
 
-### Key Patterns
-- Components use `.astro` files which combine HTML-like syntax with JavaScript/TypeScript
-- Styling uses Tailwind utility classes
-- Images are stored in `/src/assets/` and imported in components
-- The site uses smooth scrolling and intersection observer for navigation highlighting
+Navigation is in-page anchors (`/#services`, `/#approach`, `/#experience`, `/#contact`) with Tailwind's `scroll-smooth`; a small inline script toggles the mobile menu.
+
+## Tests pin the homepage copy
+
+`tests/homepage-messaging.test.mjs` reads `src/pages/index.astro` and `src/layouts/Layout.astro` as text and asserts on the copy: the page title, hero phrases, the three service card headings, the experience section headings, the meta description, navigation and footer links, and the Calendly and LinkedIn URLs. It also asserts that certain retired copy is absent (e.g. "Track Record", "FLEX", "eforge"). Any intentional copy change must update these tests in the same change.
+
+## Deployment
+
+- **Pushing `master` to `origin` deploys to production.** Vercel's GitHub connection builds and publishes every push to `master`. Do not push without the owner's approval.
+- `pnpm run deploy` runs `vercel --prod`, a manual alternative that deploys the local working copy to production (needs the Vercel CLI and the linked project in `.vercel/`).
+- Note: `pnpm deploy` without `run` is pnpm's built-in workspace deploy command, not this script, and fails in this repo.

@@ -1,108 +1,38 @@
 #+title: Schaake Solutions Website
 
-* This website is for Schaake Solutions, LLC.
+Source for [[https://www.schaake.solutions][www.schaake.solutions]], the single-page marketing site for Schaake Solutions, LLC. It presents Mark Schaake's consulting services: fractional CTO and technical leadership, applied AI implementation, and architecture and delivery consulting.
 
-* Products and Services
+* Stack
 
-** FLEX Equipment Finance (FLEX EF)
+- Astro 7 (static output) with Tailwind CSS 4 via =@tailwindcss/vite=
+- sharp for image optimization
+- pnpm; Node 22.23.4 or newer
 
-FLEX Equipment Finance is a SaaS platform and marketplace for equipment financing (B2B). FLEX facilitates equipment finance loan origination, servicing, and non-performing contract resolutions.
+* Run
 
-*** Key Features
+#+begin_src sh
+pnpm install
+pnpm dev        # http://localhost:4321
+pnpm build      # outputs dist/
+pnpm preview    # serve dist/ locally
+#+end_src
 
-**** Portals for Originators, Lenders, Borrowers, and Collectors
+* Test
 
-**** Integrations with:
+#+begin_src sh
+node --test tests/
+#+end_src
 
-***** DocuSign
+The tests check the homepage copy in =src/pages/index.astro= and =src/layouts/Layout.astro=, so update them together with any copy change.
 
-***** PayNet
+* Deploy
 
-***** EquiFax
+Hosted on Vercel. Pushing =master= to =origin= deploys to production through Vercel's GitHub connection. =pnpm run deploy= (=vercel --prod=) is a manual alternative. Plain =pnpm deploy= is a different pnpm command and does not work here.
 
-***** LexisNexis
+* Layout
 
-***** Google Docs
-
-**** Loan Underwriting Features
-
-***** Credit report combined analsyis
-
-***** Tax return and bank statement attachment detection
-
-***** FLEX AI assistant to help with credit analysis
-
-**** Loan Agreement Features
-
-***** Flexible loan structuring including contact payments, skip payments, irregular payments, due date changes, etc.
-
-***** DocuSign electronic signing workflows without leaving FLEX
-
-***** ACH AutoPay account onboarding
-
-**** Loan Servicing Features
-
-***** AutoPay (ACH) account management
-
-***** Alerts for failed payments
-
-***** FLEX AI Assistent to help troubleshoot problem accounts
-
-***** Notices (e.g. notice of default) mailing (both physical and email) with read receipts, tracking, and alerts when notice deadlines pass unresolved
-
-**** Portfolio Management Features
-
-***** Robust general ledger accounting with flexible reporting
-
-***** Custom portfolio reports
-
-***** Trend charts
-
-***** Funding forcasting based on current funding pipeline and past throughput
-
-***** Equipment for resale management
-
-***** Deficiency tracking and management module
-
-
-
-
-** AI Consulting Services
-
-Schaake Solutions offers expert AI consulting services to help businesses stay ahead of the AI revolution. Our services include:
-
-*** Key Services
-
-**** AI Strategy Development
-- AI readiness assessment
-- Use case identification and prioritization
-- Technology stack recommendations
-- ROI analysis and business case development
-
-**** Custom AI Solutions
-- Custom model development and training
-- AI-powered automation workflows
-- Chatbots and virtual assistants
-- Predictive analytics and forecasting
-
-**** AI Integration & Implementation
-- API integration and development
-- Data pipeline architecture
-- Legacy system modernization
-- Performance optimization
-
-**** Training & Support
-- Executive AI workshops
-- Technical team training
-- Best practices documentation
-- Ongoing support and optimization
-
-*** Areas of Expertise
-
-We provide AI consulting services across various industries including:
-- Finance & Banking
-- Healthcare
-- Manufacturing
-- Retail & E-commerce
-- Legal & Compliance
-- Customer Service
+- =src/pages/index.astro=: the page
+- =src/layouts/Layout.astro=: header, navigation, footer, metadata
+- =src/components/=: small Astro components (logo, link)
+- =src/assets/=, =public/=: images and static files
+- =tests/=: copy tests
