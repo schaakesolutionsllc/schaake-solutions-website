@@ -53,17 +53,8 @@ test('layout navigation, footer links, and metadata point to the refreshed exper
   }
 });
 
-test('current work mentions eforge as open source work in first person', () => {
-  assert.match(page, /Current Work/);
-  assert.match(page, /I'm actively building/);
-  assert.match(page, /eforge/);
-  assert.match(page, /open source agentic build system/);
-  assert.match(page, /build, review, validation, and merge loop/);
-  assert.match(page, /scale from small one-off projects to large, mature codebases/);
-  assert.match(page, /reliability, traceability, and engineering discipline/);
-  assert.match(page, /https:\/\/eforge\.build/);
-  assert.match(page, /https:\/\/github\.com\/eforge-build\/eforge/);
-  assert.doesNotMatch(page, /AI-assisted|disposability|disposable|We also maintain|we also maintain|our own software delivery/);
+test('homepage no longer mentions eforge', () => {
+  assert.doesNotMatch(page, /eforge/i);
 });
 
 test('external Calendly and LinkedIn links remain available', () => {
