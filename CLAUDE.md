@@ -47,3 +47,7 @@ Navigation is in-page anchors (`/#build`, `/#systems`, `/#contact`). The design 
 - **Pushing `master` to `origin` deploys to production.** Vercel's GitHub connection builds and publishes every push to `master`. Do not push without the owner's approval.
 - `pnpm run deploy` runs `vercel --prod`, a manual alternative that deploys the local working copy to production (needs the Vercel CLI and the linked project in `.vercel/`).
 - Note: `pnpm deploy` without `run` is pnpm's built-in workspace deploy command, not this script, and fails in this repo.
+
+## Shared design tokens
+
+The `@theme` tokens in `src/styles/global.css` (colours and type) are shared with markschaake.com, which adopted them in its commit 02ca198 (2026-11-20). If you change a token, tell the schaake.solutions lead so the markschaake.com lead can follow. markschaake.com's dark mode uses the dark A/B palette from the design review (#020618 background, #00d3f3 accent).
